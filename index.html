@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Francisco Leitão</title>
+<meta name="description" content="Francisco Leitão — estratega de growth y líder comercial. Expertise en desarrollo de producto, performance, contenido, retención, CRM, alianzas y más." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #09090F;
+    --bg-2: #0F0F18;
+    --panel: rgba(255,255,255,0.038);
+    --panel-2: rgba(255,255,255,0.07);
+    --line: rgba(255,255,255,0.10);
+    --line-2: rgba(255,255,255,0.18);
+    --ink: #EDEDF4;
+    --muted: #9A99AE;
+    --violet: #6D5DFF;
+    --violet-2: #A99EFF;
+    --cyan: #22D3EE;
+    --gold: #E8B04B;
+    --grad: linear-gradient(120deg, #6D5DFF 0%, #22D3EE 100%);
+    --grad-soft: linear-gradient(120deg, rgba(109,93,255,0.16), rgba(34,211,238,0.10));
+    --radius: 18px;
+    --maxw: 1160px;
+    --display: "Bricolage Grotesque", system-ui, sans-serif;
+    --body: "Hanken Grotesk", system-ui, sans-serif;
+    --mono: "Space Mono", ui-monospace, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+  body { margin: 0; font-family: var(--body); color: var(--ink); background: var(--bg); line-height: 1.62; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  body::before { content: ""; position: fixed; inset: 0; z-index: -2; background:
+      radial-gradient(720px 520px at 8% -8%, rgba(109,93,255,0.30), transparent 60%),
+      radial-gradient(640px 520px at 100% 4%, rgba(34,211,238,0.16), transparent 60%),
+      radial-gradient(820px 620px at 50% 116%, rgba(109,93,255,0.13), transparent 60%), var(--bg); }
+  body::after { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+      background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 64px 64px; mask-image: radial-gradient(circle at 50% 24%, #000 30%, transparent 82%); }
+  a { color: inherit; }
+  h1,h2,h3 { font-family: var(--display); font-weight: 700; line-height: 1.05; margin: 0; letter-spacing: -0.02em; }
+  p { margin: 0; }
+  .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+  .eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--violet-2); display: inline-block; }
+  .grad-text { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+  .site-header { position: sticky; top: 0; z-index: 60; background: rgba(9,9,15,0.72); backdrop-filter: saturate(160%) blur(14px); border-bottom: 1px solid var(--line); }
+  .nav { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+  .brand { font-family: var(--display); font-weight: 700; font-size: 18px; letter-spacing: -0.02em; text-decoration: none; }
+  .nav-links { display: flex; gap: 30px; align-items: center; }
+  .nav-links a { text-decoration: none; font-size: 14.5px; color: var(--muted); transition: color .18s; }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-cta { display: inline-flex; align-items: center; gap: 7px; font-family: var(--display); font-weight: 600; font-size: 14px; padding: 9px 18px; border-radius: 999px; background: var(--grad); color: #07070d; text-decoration: none; box-shadow: 0 6px 24px rgba(109,93,255,0.4); transition: transform .16s; }
+  .nav-cta:hover { transform: translateY(-1px); }
+  .nav-toggle { display: none; background: var(--panel); border: 1px solid var(--line-2); color: var(--ink); border-radius: 10px; padding: 9px 11px; cursor: pointer; font-size: 18px; }
+
+  .btn { display: inline-flex; align-items: center; gap: 9px; font-family: var(--display); font-weight: 600; font-size: 15px; padding: 14px 26px; border-radius: 999px; text-decoration: none; border: 1px solid transparent; transition: transform .16s, box-shadow .2s, border-color .2s; }
+  .btn-primary { background: var(--grad); color: #07070d; box-shadow: 0 10px 34px rgba(109,93,255,0.42); }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 44px rgba(109,93,255,0.55); }
+  .btn-ghost { background: var(--panel); color: var(--ink); border-color: var(--line-2); }
+  .btn-ghost:hover { transform: translateY(-2px); border-color: var(--violet-2); }
+
+  /* Hero */
+  .hero { padding: 92px 0 64px; }
+  .hero .eyebrow { margin-bottom: 22px; }
+  .hero h1 { font-size: clamp(50px, 10vw, 118px); font-weight: 800; line-height: 0.96; }
+  .hero .role { margin-top: 22px; font-family: var(--display); font-weight: 600; font-size: clamp(20px, 3vw, 30px); color: var(--ink); letter-spacing: -0.02em; max-width: 22ch; }
+  .hero .intro { margin-top: 22px; font-size: 18px; color: var(--muted); max-width: 60ch; }
+  .cta-row { display: flex; gap: 14px; margin-top: 34px; flex-wrap: wrap; }
+  .creds { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 36px; }
+  .cred { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.04em; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 8px 14px; background: var(--panel); }
+  .cred b { color: var(--ink); font-weight: 700; }
+
+  section { padding: 76px 0; }
+  .section-head { max-width: 60ch; margin-bottom: 44px; }
+  .section-head h2 { font-size: clamp(30px, 4.4vw, 46px); margin-top: 14px; }
+  .section-head p { margin-top: 14px; color: var(--muted); font-size: 17px; max-width: 58ch; }
+
+  /* Areas */
+  .areas { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+  .area { position: relative; display: flex; flex-direction: column; min-height: 184px; background: var(--panel); border: 1px solid var(--line); border-radius: 20px; padding: 24px; text-decoration: none; transition: transform .2s, border-color .2s, background .2s; }
+  a.area:hover { transform: translateY(-5px); border-color: var(--violet); background: var(--panel-2); }
+  .area .tag { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--violet-2); }
+  .area h3 { font-size: 19px; margin: 14px 0 8px; }
+  .area p { font-size: 14px; color: var(--muted); flex: 1; }
+  .area .go { margin-top: 16px; font-family: var(--display); font-weight: 600; font-size: 13.5px; display: inline-flex; align-items: center; gap: 6px; }
+  .area .go.active { color: var(--cyan); }
+  .area .go.active .ar { transition: transform .18s; }
+  a.area:hover .go.active .ar { transform: translate(3px,-3px); }
+  .area .go.soon { color: var(--muted); }
+  .area.is-soon { cursor: default; }
+  .area.is-soon:hover { transform: none; border-color: var(--line); background: var(--panel); }
+
+  /* Trajectory */
+  #trayectoria { background: linear-gradient(180deg, transparent, rgba(255,255,255,0.015)); }
+  .traj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  .traj-col { background: var(--panel); border: 1px solid var(--line); border-radius: 20px; padding: 30px; }
+  .traj-col h3 { font-size: 14px; font-family: var(--mono); font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--violet-2); }
+  .traj-list { list-style: none; margin: 18px 0 0; padding: 0; }
+  .traj-list li { padding: 14px 0; border-top: 1px solid var(--line); }
+  .traj-list .t { font-family: var(--display); font-weight: 600; font-size: 16px; }
+  .traj-list .s { font-size: 13.5px; color: var(--muted); margin-top: 2px; }
+  .pills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+  .pill { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.04em; color: var(--ink); border: 1px solid var(--line-2); border-radius: 999px; padding: 8px 14px; background: var(--panel); }
+  .pill.award { border-color: rgba(232,176,75,0.5); color: var(--gold); }
+  .pills-head { font-family: var(--mono); font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin: 40px 0 0; }
+
+  /* Contact */
+  .contact { border-radius: 28px; padding: 64px 40px; text-align: center; border: 1px solid var(--line); background: var(--grad-soft); }
+  .contact h2 { font-size: clamp(30px, 5vw, 52px); }
+  .contact p { color: var(--muted); margin: 16px auto 0; max-width: 46ch; font-size: 17px; }
+  .contact .cta-row { justify-content: center; }
+
+  .site-footer { border-top: 1px solid var(--line); padding: 44px 0 60px; }
+  .site-footer .wrap { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; align-items: center; }
+  .site-footer .brand { font-size: 16px; }
+  .site-footer p { font-size: 13.5px; color: var(--muted); }
+
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  :focus-visible { outline: 3px solid var(--violet-2); outline-offset: 3px; border-radius: 6px; }
+
+  @media (max-width: 860px) {
+    .traj-grid { grid-template-columns: 1fr; }
+    .nav-links, .nav .nav-cta { display: none; }
+    .nav-links.open { display: flex; position: absolute; top: 68px; left: 0; right: 0; flex-direction: column; gap: 0; background: var(--bg-2); border-bottom: 1px solid var(--line); padding: 8px 24px 18px; }
+    .nav-links.open a { padding: 13px 0; border-bottom: 1px solid var(--line); }
+    .nav-toggle { display: inline-flex; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="#top">Francisco <span class="grad-text">Leitão</span></a>
+    <nav class="nav-links" id="navlinks">
+      <a href="#areas">Expertise</a>
+      <a href="#trayectoria">Trayectoria</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a class="nav-cta" href="https://www.linkedin.com/in/francisco-leitao/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    <button class="nav-toggle" id="navtoggle" aria-label="Abrir menú" aria-expanded="false">≡</button>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap reveal">
+      <span class="eyebrow">Growth · Marketing · Liderazgo comercial</span>
+      <h1>Francisco <span class="grad-text">Leitão</span></h1>
+      <p class="role">Convierto marketing y estrategia comercial en crecimiento real.</p>
+      <p class="intro">Más de 15 años entre el mundo comercial del consumo masivo (Cervecería AB InBev, Capel) y el growth digital (PedidosYa, Lomi, OOH Publicidad): de liderar áreas comerciales y de marketing a diseñar estrategias de adquisición, retención y alianzas para negocios B2C, B2B y SaaS.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#areas">Ver áreas de expertise →</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/francisco-leitao/" target="_blank" rel="noopener">Ver LinkedIn</a>
+      </div>
+      <div class="creds">
+        <span class="cred"><b>+15 años</b> en growth, ventas y marketing</span>
+        <span class="cred">Ingeniero Civil Industrial · <b>UAI</b></span>
+        <span class="cred">MBA · <b>PUC</b></span>
+        <span class="cred">Digital Business Strategy · <b>MIT Sloan</b></span>
+      </div>
+    </div>
+  </section>
+
+  <section id="areas">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">En qué soy experto</span>
+        <h2>Áreas de expertise</h2>
+        <p>Cada área enlaza a su propia página con casos, enfoque y servicios. Las que aún no tienen página están en camino.</p>
+      </div>
+      <div class="areas">
+
+        <!-- Para activar una tarjeta: cambia el <div class="area is-soon"> por <a class="area" href="https://TU-URL.vercel.app" target="_blank" rel="noopener"> y deja el <span class="go active"> -->
+
+        <div class="area is-soon" role="article">
+          <span class="tag">Producto</span>
+          <h3>Desarrollo de productos web y app</h3>
+          <p>Plataformas y aplicaciones a medida, del prototipo al producto en producción, pensadas para escalar.</p>
+          <span class="go soon">Próximamente</span>
+        </div>
+
+        <div class="area is-soon" role="article">
+          <span class="tag">Performance</span>
+          <h3>Paid Media</h3>
+          <p>Campañas en Google, Meta y más, optimizadas por las métricas que mueven el negocio, no vanity metrics.</p>
+          <span class="go soon">Próximamente</span>
+        </div>
+
+        <div class="area is-soon" role="article">
+          <span class="tag">Orgánico</span>
+          <h3>SEO &amp; GEO</h3>
+          <p>Posicionamiento en buscadores y en motores de IA, con contenido que responde la intención real de compra.</p>
+          <span class="go soon">Próximamente</span>
+        </div>
+
+        <div class="area is-soon" role="article">
+          <span class="tag">Automatización</span>
+          <h3>Inbound Marketing &amp; automatizaciones</h3>
+          <p>Email, WhatsApp, SMS y push con flujos automáticos: carrito abandonado, post-venta, reactivación y más.</p>
+          <span class="go soon">Próximamente</span>
+        </div>
+
+        <div class="area is-soon" role="article">
+          <span class="tag">Contenido</span>
+          <h3>Contenido gráfico y producción audiovisual</h3>
+          <p>Cápsulas, piezas y video para RRSS y campañas, con identidad de marca y foco en conversión.</p>
+          <span class="go soon">Próximamente</span>
+        </div>
+
+        <a class="area" href="https://marketing-de-afiliados.vercel.app" target="_blank" rel="noopener">
+          <span class="tag">Crecimiento</span>
+          <h3>Marketing de Afiliados</h3>
+          <p>Modelos por desempeño de punta a punta: redes, tracking, comisiones y programas propios.</p>
+          <span class="go active">Ver más <span class="ar">↗</span></span>
+        </a>
+
+        <div class="area is-soon" role="article">
+          <span class="tag">Crecimiento</span>
+          <h3>Programas de Referidos</h3>
+          <p>Convierte a tus clientes en canal de adquisición con referidos medibles y bien incentivados.</p>
+          <span class="go soon">Próximamente</span>
+        </div>
+
+        <div class="area is-soon" role="article">
+          <span class="tag">Retención</span>
+          <h3>Programas de Fidelidad / Loyalty</h3>
+          <p>Sistemas de puntos, niveles y beneficios que aumentan la recompra y el valor de vida del cliente.</p>
+          <span class="go soon">Próximamente</span>
+        </div>
+
+        <div class="area is-soon" role="article">
+          <span class="tag">Social</span>
+          <h3>Redes Sociales</h3>
+          <p>Estrategia, contenido y comunidad para construir marca y demanda en los canales correctos.</p>
+          <span class="go soon">Próximamente</span>
+        </div>
+
+        <div class="area is-soon" role="article">
+          <span class="tag">Comercial</span>
+          <h3>Estrategia y liderazgo comercial</h3>
+          <p>Dirección de áreas comerciales B2C, B2B y SaaS: pipeline, pricing y equipos orientados a resultados.</p>
+          <span class="go soon">Próximamente</span>
+        </div>
+
+        <div class="area is-soon" role="article">
+          <span class="tag">Comercial</span>
+          <h3>Estrategias y programas de incentivos</h3>
+          <p>Esquemas de incentivos para fuerza de ventas, canales y partners que alinean esfuerzo con metas.</p>
+          <span class="go soon">Próximamente</span>
+        </div>
+
+        <div class="area is-soon" role="article">
+          <span class="tag">Data</span>
+          <h3>CRM</h3>
+          <p>Implementación y operación de CRM para centralizar clientes y ordenar marketing, ventas y soporte.</p>
+          <span class="go soon">Próximamente</span>
+        </div>
+
+        <div class="area is-soon" role="article">
+          <span class="tag">Marca</span>
+          <h3>Estrategias de PR</h3>
+          <p>Posicionamiento de marca y vocería: relato, medios y reputación al servicio del negocio.</p>
+          <span class="go soon">Próximamente</span>
+        </div>
+
+        <div class="area is-soon" role="article">
+          <span class="tag">Negocio</span>
+          <h3>Alianzas Estratégicas</h3>
+          <p>Partnerships y desarrollo de negocio para abrir mercados y crecer vía colaboración.</p>
+          <span class="go soon">Próximamente</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="trayectoria">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Por qué sé de esto</span>
+        <h2>Trayectoria</h2>
+        <p>Una mezcla poco común: la disciplina comercial del consumo masivo más el growth digital de startups y agencia.</p>
+      </div>
+      <div class="traj-grid">
+        <div class="traj-col reveal">
+          <h3>Experiencia</h3>
+          <ul class="traj-list">
+            <li><div class="t">Commercial &amp; Marketing Manager</div><div class="s">TW Logística — operador 3PL (2025 · actualidad)</div></li>
+            <li><div class="t">Growth Advisor Partner</div><div class="s">GOTOMARKET (2020 · actualidad)</div></li>
+            <li><div class="t">Head of Growth</div><div class="s">OOH Publicidad — eCommerce / SaaS B2B (2024–2025)</div></li>
+            <li><div class="t">Head of Growth &amp; Cofundador</div><div class="s">Lomi — eCommerce, dark stores y última milla (2020–2024)</div></li>
+            <li><div class="t">Head of Growth</div><div class="s">PedidosYa (2019–2020)</div></li>
+            <li><div class="t">Gerente Comercial Zona Centro</div><div class="s">Cooperativa Capel (2016–2019)</div></li>
+            <li><div class="t">Gerente de Trade Marketing</div><div class="s">Cervecería AB InBev Chile (2012–2016)</div></li>
+          </ul>
+        </div>
+        <div class="traj-col reveal">
+          <h3>Formación</h3>
+          <ul class="traj-list">
+            <li><div class="t">Ingeniería Civil Industrial · Minor Gestión TI</div><div class="s">Universidad Adolfo Ibáñez</div></li>
+            <li><div class="t">MBA</div><div class="s">Pontificia Universidad Católica de Chile</div></li>
+            <li><div class="t">Digital Business Strategy</div><div class="s">MIT Sloan School of Management</div></li>
+            <li><div class="t">Marketing Digital &amp; eCommerce</div><div class="s">Universidad Adolfo Ibáñez</div></li>
+            <li><div class="t">Desarrollo Web</div><div class="s">Desafío Latam</div></li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="pills-head reveal">Certificaciones y formación continua</p>
+      <div class="pills reveal">
+        <span class="pill">Reforge · Growth &amp; Performance</span>
+        <span class="pill">Lean Six Sigma · Yellow Belt</span>
+        <span class="pill">IA · Google &amp; Microsoft</span>
+      </div>
+
+      <p class="pills-head reveal">Idiomas</p>
+      <div class="pills reveal">
+        <span class="pill">Español · nativo</span>
+        <span class="pill">Inglés · avanzado</span>
+        <span class="pill">Portugués · medio</span>
+      </div>
+
+      <p class="pills-head reveal">Reconocimientos</p>
+      <div class="pills reveal">
+        <span class="pill award">1er lugar global · Sales Process ABI (Trade Marketing)</span>
+        <span class="pill award">1er lugar Sudamérica · AB InBev — reposición compartida con Coca-Cola Andina</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <div class="wrap reveal">
+      <div class="contact">
+        <span class="eyebrow">Conversemos</span>
+        <h2>¿Tienes un desafío de <span class="grad-text">crecimiento</span>?</h2>
+        <p>Cuéntame qué quieres mover y vemos cómo abordarlo. Por correo, WhatsApp o LinkedIn.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="mailto:francisco.leitaolopez@gmail.com">Escríbeme un correo →</a>
+          <a class="btn btn-ghost" href="https://wa.me/56978790406" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/francisco-leitao/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a class="brand" href="#top">Francisco <span class="grad-text">Leitão</span></a>
+    <p>© <span id="y"></span> Francisco Leitão. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<script>
+  var toggle = document.getElementById('navtoggle');
+  var links = document.getElementById('navlinks');
+  toggle.addEventListener('click', function () {
+    var open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') { links.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); }
+  });
+
+  document.getElementById('y').textContent = new Date().getFullYear();
+
+  var reveals = document.querySelectorAll('.reveal');
+  if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches && 'IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(function (el) { io.observe(el); });
+  } else { reveals.forEach(function (el) { el.classList.add('in'); }); }
+</script>
+
+</body>
+</html>
