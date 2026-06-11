@@ -84,6 +84,9 @@
     border-bottom: 1px solid var(--line);
   }
   .nav { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+  .nav-left { display: flex; align-items: center; gap: 14px; }
+  .back-link { font-family: var(--mono); font-size: 12px; letter-spacing: 0.04em; text-decoration: none; color: var(--muted); border: 1px solid var(--line-2); border-radius: 999px; padding: 7px 12px; white-space: nowrap; transition: color .18s, border-color .18s; }
+  .back-link:hover { color: var(--ink); border-color: var(--violet-2); }
   .brand { display: flex; align-items: center; gap: 11px; font-family: var(--display); font-weight: 700; font-size: 18px; letter-spacing: -0.02em; text-decoration: none; }
   .brand-mark { width: 30px; height: 30px; border-radius: 9px; background: var(--grad); display: inline-flex; align-items: center; justify-content: center; color: #fff; font-family: var(--mono); font-size: 14px; font-weight: 700; box-shadow: 0 0 24px rgba(91,75,255,0.55); }
   .nav-links { display: flex; gap: 30px; align-items: center; }
@@ -241,6 +244,7 @@
     .steps { grid-template-columns: 1fr; }
     .hero { padding: 56px 0 28px; }
     .def, .cta-band { padding: 32px 24px; }
+    .brand-text { display: none; }
   }
 </style>
 </head>
@@ -248,9 +252,11 @@
 
 <header class="site-header">
   <div class="wrap nav">
-    <a class="brand" href="#top"><span class="brand-mark">A</span> Marketing de <span class="grad-text">Afiliados</span></a>
+    <div class="nav-left">
+      <a class="back-link" href="/">← Experiencia</a>
+      <a class="brand" href="#top"><span class="brand-mark">A</span> <span class="brand-text">Marketing de <span class="grad-text">Afiliados</span></span></a>
+    </div>
     <nav class="nav-links" id="navlinks">
-      <a href="/">← Experiencia</a>
       <a href="#que-es">Qué es</a>
       <a href="#como-funciona">Cómo funciona</a>
       <a href="#ejemplos">Ejemplos</a>
