@@ -3,135 +3,244 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Experiencia</title>
+<title>Afiliados</title>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
 <link rel="apple-touch-icon" href="/favicon-180.png" />
-<meta name="description" content="Francisco Leitao — estratega de growth y líder comercial. Expertise en desarrollo de producto, performance, contenido, retención, CRM, alianzas y más." />
+<meta name="description" content="Guía visual del marketing de afiliados: qué es, cómo funciona, ejemplos reales y a qué plataformas ir. Para afiliados y para empresas." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
 <style>
   :root {
-    --bg: #09090F;
-    --bg-2: #0F0F18;
-    --panel: rgba(255,255,255,0.038);
-    --panel-2: rgba(255,255,255,0.07);
-    --line: rgba(255,255,255,0.10);
-    --line-2: rgba(255,255,255,0.18);
-    --ink: #EDEDF4;
-    --muted: #9A99AE;
-    --violet: #6D5DFF;
-    --violet-2: #A99EFF;
-    --cyan: #22D3EE;
-    --gold: #E8B04B;
-    --grad: linear-gradient(120deg, #6D5DFF 0%, #22D3EE 100%);
-    --grad-soft: linear-gradient(120deg, rgba(109,93,255,0.16), rgba(34,211,238,0.10));
+    --bg: #08080F;
+    --bg2: #0C0C18;
+    --panel: rgba(255,255,255,0.035);
+    --panel-2: rgba(255,255,255,0.06);
+    --line: rgba(255,255,255,0.09);
+    --line-2: rgba(255,255,255,0.16);
+    --ink: #ECECF6;
+    --muted: #9C9AB2;
+    --violet: #5B4BFF;
+    --violet-2: #8E82FF;
+    --cyan: #1FD6FF;
+    --gold: #FFB23E;
+    --grad: linear-gradient(120deg, #5B4BFF 0%, #1FD6FF 100%);
+    --grad-soft: linear-gradient(120deg, rgba(91,75,255,0.18), rgba(31,214,255,0.12));
     --radius: 18px;
-    --maxw: 1160px;
-    --display: "Bricolage Grotesque", system-ui, sans-serif;
+    --maxw: 1140px;
+    --display: "Space Grotesk", system-ui, sans-serif;
     --body: "Hanken Grotesk", system-ui, sans-serif;
     --mono: "Space Mono", ui-monospace, monospace;
   }
+
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; scroll-padding-top: 84px; }
-  body { margin: 0; font-family: var(--body); color: var(--ink); background: var(--bg); line-height: 1.62; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
-  body::before { content: ""; position: fixed; inset: 0; z-index: -2; background:
-      radial-gradient(720px 520px at 8% -8%, rgba(109,93,255,0.30), transparent 60%),
-      radial-gradient(640px 520px at 100% 4%, rgba(34,211,238,0.16), transparent 60%),
-      radial-gradient(820px 620px at 50% 116%, rgba(109,93,255,0.13), transparent 60%), var(--bg); }
-  body::after { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
-      background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
-      background-size: 64px 64px; mask-image: radial-gradient(circle at 50% 24%, #000 30%, transparent 82%); }
+  body {
+    margin: 0;
+    font-family: var(--body);
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.62;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  /* ambient backdrop */
+  body::before {
+    content: "";
+    position: fixed; inset: 0; z-index: -2;
+    background:
+      radial-gradient(700px 500px at 12% -5%, rgba(91,75,255,0.28), transparent 60%),
+      radial-gradient(600px 500px at 95% 5%, rgba(31,214,255,0.16), transparent 60%),
+      radial-gradient(800px 600px at 50% 110%, rgba(91,75,255,0.14), transparent 60%),
+      var(--bg);
+  }
+  body::after {
+    content: "";
+    position: fixed; inset: 0; z-index: -1; pointer-events: none;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.022) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.022) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(circle at 50% 30%, #000 30%, transparent 80%);
+  }
+
   a { color: inherit; }
-  h1,h2,h3 { font-family: var(--display); font-weight: 700; line-height: 1.05; margin: 0; letter-spacing: -0.02em; }
+  h1,h2,h3 { font-family: var(--display); font-weight: 700; line-height: 1.04; margin: 0; letter-spacing: -0.02em; }
   p { margin: 0; }
   .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
-  .eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--violet-2); display: inline-block; }
+
+  .eyebrow {
+    font-family: var(--mono); font-size: 12px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--violet-2); display: inline-block;
+  }
   .grad-text { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
 
-  .site-header { position: sticky; top: 0; z-index: 60; background: rgba(9,9,15,0.72); backdrop-filter: saturate(160%) blur(14px); border-bottom: 1px solid var(--line); }
+  /* Header */
+  .site-header {
+    position: sticky; top: 0; z-index: 60;
+    background: rgba(8,8,15,0.72);
+    backdrop-filter: saturate(160%) blur(14px);
+    border-bottom: 1px solid var(--line);
+  }
   .nav { display: flex; align-items: center; justify-content: space-between; height: 68px; }
-  .brand { font-family: var(--display); font-weight: 700; font-size: 18px; letter-spacing: -0.02em; text-decoration: none; }
+  .brand { display: flex; align-items: center; gap: 11px; font-family: var(--display); font-weight: 700; font-size: 18px; letter-spacing: -0.02em; text-decoration: none; }
+  .brand-mark { width: 30px; height: 30px; border-radius: 9px; background: var(--grad); display: inline-flex; align-items: center; justify-content: center; color: #fff; font-family: var(--mono); font-size: 14px; font-weight: 700; box-shadow: 0 0 24px rgba(91,75,255,0.55); }
   .nav-links { display: flex; gap: 30px; align-items: center; }
   .nav-links a { text-decoration: none; font-size: 14.5px; color: var(--muted); transition: color .18s; }
   .nav-links a:hover { color: var(--ink); }
-  .nav-cta { display: inline-flex; align-items: center; gap: 7px; font-family: var(--display); font-weight: 600; font-size: 14px; padding: 9px 18px; border-radius: 999px; background: var(--grad); color: #07070d; text-decoration: none; box-shadow: 0 6px 24px rgba(109,93,255,0.4); transition: transform .16s; }
+  .nav-cta { display: inline-flex; align-items: center; gap: 7px; font-family: var(--display); font-weight: 500; font-size: 14px; padding: 9px 18px; border-radius: 999px; background: var(--grad); color: #fff; text-decoration: none; box-shadow: 0 6px 24px rgba(91,75,255,0.4); transition: transform .16s; }
   .nav-cta:hover { transform: translateY(-1px); }
-  .nav-toggle { display: none; background: var(--panel); border: 1px solid var(--line-2); color: var(--ink); border-radius: 10px; padding: 9px 11px; cursor: pointer; font-size: 18px; }
+  .nav-toggle { display: none; background: var(--panel); border: 1px solid var(--line-2); color: var(--ink); border-radius: 10px; padding: 9px 11px; cursor: pointer; font-size: 18px; line-height: 1; }
 
-  .btn { display: inline-flex; align-items: center; gap: 9px; font-family: var(--display); font-weight: 600; font-size: 15px; padding: 14px 26px; border-radius: 999px; text-decoration: none; border: 1px solid transparent; transition: transform .16s, box-shadow .2s, border-color .2s; }
-  .btn-primary { background: var(--grad); color: #07070d; box-shadow: 0 10px 34px rgba(109,93,255,0.42); }
-  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 44px rgba(109,93,255,0.55); }
+  /* Buttons */
+  .btn { display: inline-flex; align-items: center; gap: 9px; font-family: var(--display); font-weight: 500; font-size: 15px; padding: 14px 26px; border-radius: 999px; text-decoration: none; border: 1px solid transparent; transition: transform .16s, box-shadow .2s, border-color .2s, background .2s; }
+  .btn-primary { background: var(--grad); color: #fff; box-shadow: 0 10px 34px rgba(91,75,255,0.42); }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 44px rgba(91,75,255,0.55); }
   .btn-ghost { background: var(--panel); color: var(--ink); border-color: var(--line-2); }
   .btn-ghost:hover { transform: translateY(-2px); border-color: var(--violet-2); }
 
   /* Hero */
-  .hero { padding: 84px 0 36px; }
-  .hero .eyebrow { margin-bottom: 22px; }
-  .hero h1 { font-size: clamp(50px, 10vw, 118px); font-weight: 800; line-height: 0.96; }
-  .hero .role { margin-top: 22px; font-family: var(--display); font-weight: 600; font-size: clamp(20px, 3vw, 30px); color: var(--ink); letter-spacing: -0.02em; max-width: 22ch; }
-  .hero .intro { margin-top: 22px; font-size: 18px; color: var(--muted); max-width: 60ch; }
+  .hero { padding: 86px 0 56px; }
+  .hero-grid { display: grid; grid-template-columns: 1.08fr 0.92fr; gap: 54px; align-items: center; }
+  .hero h1 { font-size: clamp(40px, 6.6vw, 74px); text-transform: uppercase; }
+  .hero .lede { margin-top: 24px; font-size: 19px; color: var(--muted); max-width: 36ch; }
   .cta-row { display: flex; gap: 14px; margin-top: 34px; flex-wrap: wrap; }
-  .creds { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 36px; }
-  .cred { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.04em; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 8px 14px; background: var(--panel); }
-  .cred b { color: var(--ink); font-weight: 700; }
+  .stat-strip { display: flex; gap: 26px; margin-top: 40px; flex-wrap: wrap; }
+  .stat .n { font-family: var(--display); font-weight: 700; font-size: 26px; }
+  .stat .l { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
 
-  section { padding: 52px 0; }
-  .section-head { max-width: 60ch; margin-bottom: 44px; }
-  .section-head h2 { font-size: clamp(30px, 4.4vw, 46px); margin-top: 14px; }
-  .section-head p { margin-top: 14px; color: var(--muted); font-size: 17px; max-width: 58ch; }
+  /* Hero diagram card */
+  .diagram-card { position: relative; background: var(--panel); border: 1px solid var(--line); border-radius: 26px; padding: 24px; box-shadow: 0 30px 80px rgba(0,0,0,0.4); }
+  .diagram-card::before { content: ""; position: absolute; inset: -1px; border-radius: 27px; padding: 1px; background: var(--grad); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; opacity: 0.5; pointer-events: none; }
+  .diagram-card svg { width: 100%; height: auto; display: block; }
+  .flow { stroke-dasharray: 6 8; }
+  @media (prefers-reduced-motion: no-preference) {
+    .flow { animation: dash 1.5s linear infinite; }
+    @keyframes drift { 0%,100% { transform: translate(0,0); } 50% { transform: translate(14px,-12px); } }
+  }
+  @keyframes dash { to { stroke-dashoffset: -28; } }
 
-  /* Areas */
-  .areas { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
-  .area { position: relative; display: flex; flex-direction: column; min-height: 184px; background: var(--panel); border: 1px solid var(--line); border-radius: 20px; padding: 24px; text-decoration: none; transition: transform .2s, border-color .2s, background .2s; }
-  a.area:hover { transform: translateY(-5px); border-color: var(--violet); background: var(--panel-2); }
-  .area .tag { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--violet-2); }
-  .area h3 { font-size: 19px; margin: 14px 0 8px; }
-  .area p { font-size: 14px; color: var(--muted); flex: 1; }
-  .area .go { margin-top: 16px; font-family: var(--display); font-weight: 600; font-size: 13.5px; display: inline-flex; align-items: center; gap: 6px; }
-  .area .go.active { color: var(--cyan); }
-  .area .go.active .ar { transition: transform .18s; }
-  a.area:hover .go.active .ar { transform: translateX(4px); }
-  .area .go.soon { color: var(--muted); }
-  .area.is-soon { cursor: default; }
-  .area.is-soon:hover { transform: none; border-color: var(--line); background: var(--panel); }
+  /* Sections */
+  section { padding: 78px 0; position: relative; }
+  .section-head { max-width: 60ch; margin-bottom: 46px; }
+  .section-head h2 { font-size: clamp(30px, 4.4vw, 46px); margin-top: 14px; text-transform: uppercase; }
+  .section-head p { margin-top: 16px; color: var(--muted); font-size: 17px; max-width: 56ch; }
 
-  /* Trajectory */
-  #trayectoria { background: linear-gradient(180deg, transparent, rgba(255,255,255,0.015)); }
-  .traj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
-  .traj-col { background: var(--panel); border: 1px solid var(--line); border-radius: 20px; padding: 30px; }
-  .traj-col h3 { font-size: 14px; font-family: var(--mono); font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--violet-2); }
-  .traj-list { list-style: none; margin: 18px 0 0; padding: 0; }
-  .traj-list li { padding: 14px 0; border-top: 1px solid var(--line); }
-  .traj-list .t { font-family: var(--display); font-weight: 600; font-size: 16px; }
-  .traj-list .s { font-size: 13.5px; color: var(--muted); margin-top: 2px; }
-  .pills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
-  .pill { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.04em; color: var(--ink); border: 1px solid var(--line-2); border-radius: 999px; padding: 8px 14px; background: var(--panel); }
-  .pill.award { border-color: rgba(232,176,75,0.5); color: var(--gold); }
-  .pills-head { font-family: var(--mono); font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin: 40px 0 0; }
+  /* Definition */
+  .def { position: relative; border-radius: 24px; padding: 52px; border: 1px solid var(--line); background: var(--grad-soft); overflow: hidden; }
+  .def .big { font-family: var(--display); font-weight: 600; font-size: clamp(23px, 3.6vw, 34px); line-height: 1.22; letter-spacing: -0.02em; margin-top: 18px; }
+  .def .big b { font-weight: 700; }
 
-  /* Contact */
-  .contact { border-radius: 28px; padding: 64px 40px; text-align: center; border: 1px solid var(--line); background: var(--grad-soft); }
-  .contact h2 { font-size: clamp(30px, 5vw, 52px); }
-  .contact p { color: var(--muted); margin: 16px auto 0; max-width: 46ch; font-size: 17px; }
-  .contact .cta-row { justify-content: center; }
+  /* Steps */
+  .steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+  .step { position: relative; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px 20px; transition: transform .2s, border-color .2s, background .2s; }
+  .step:hover { transform: translateY(-4px); border-color: var(--violet); background: var(--panel-2); }
+  .step .num { font-family: var(--mono); font-weight: 700; font-size: 14px; color: #fff; background: var(--grad); width: 38px; height: 38px; border-radius: 11px; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 0 22px rgba(91,75,255,0.5); }
+  .step h3 { font-size: 17px; margin: 18px 0 8px; }
+  .step p { font-size: 14px; color: var(--muted); }
 
-  .site-footer { border-top: 1px solid var(--line); padding: 44px 0 60px; }
-  .site-footer .wrap { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; align-items: center; }
-  .site-footer .brand { font-size: 16px; }
-  .site-footer p { font-size: 13.5px; color: var(--muted); }
+  /* Models */
+  .models { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .model { border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; background: var(--panel); transition: transform .2s, border-color .2s; }
+  .model:hover { transform: translateY(-4px); border-color: var(--cyan); }
+  .model .tag { font-family: var(--mono); font-weight: 700; font-size: 13px; letter-spacing: 0.06em; color: var(--cyan); }
+  .model h3 { font-size: 20px; margin: 10px 0 10px; }
+  .model p { font-size: 14.5px; color: var(--muted); }
 
+  /* Examples */
+  .ex-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  .ex { position: relative; border: 1px solid var(--line); border-radius: 20px; padding: 30px; background: var(--panel); overflow: hidden; transition: transform .2s, border-color .2s; }
+  .ex:hover { transform: translateY(-4px); border-color: var(--violet-2); }
+  .ex .ex-n { font-family: var(--mono); font-size: 13px; color: var(--muted); letter-spacing: 0.1em; }
+  .ex h3 { font-size: 21px; margin: 10px 0 12px; }
+  .ex p { color: var(--muted); font-size: 15px; }
+  .ex .ex-meta { display: inline-flex; align-items: center; gap: 8px; margin-top: 18px; font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--violet-2); border: 1px solid var(--line-2); border-radius: 999px; padding: 6px 13px; }
+
+  /* Platforms */
+  .plat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  .plat-col { position: relative; background: var(--panel); border: 1px solid var(--line); border-radius: 22px; padding: 30px; }
+  .plat-col-head { display: flex; align-items: center; gap: 11px; }
+  .dot { width: 12px; height: 12px; border-radius: 50%; flex: none; }
+  .dot.affil { background: var(--violet); box-shadow: 0 0 14px var(--violet); }
+  .dot.biz { background: var(--gold); box-shadow: 0 0 14px var(--gold); }
+  .plat-col h3 { font-size: 21px; text-transform: uppercase; }
+  .plat-col .role { font-size: 14px; color: var(--muted); margin: 8px 0 18px; }
+  .plat-item { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; padding: 14px 0; border-top: 1px solid var(--line); text-decoration: none; transition: padding-left .18s, border-color .18s; }
+  .plat-item:hover { padding-left: 8px; border-color: var(--violet-2); }
+  .plat-name { font-family: var(--display); font-weight: 500; font-size: 15.5px; display: inline-flex; align-items: center; gap: 7px; white-space: nowrap; }
+  .plat-name .arrow { font-family: var(--mono); font-size: 13px; color: var(--violet-2); transition: transform .18s; }
+  .plat-item:hover .plat-name .arrow { transform: translate(2px,-2px); }
+  .plat-desc { font-size: 13px; color: var(--muted); text-align: right; }
+
+  /* Techniques */
+  .tech-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  .tech-col { background: var(--panel); border: 1px solid var(--line); border-radius: 22px; padding: 30px; }
+  .tech-col .plat-col-head { display: flex; align-items: center; gap: 11px; }
+  .tech-col h3 { font-size: 21px; text-transform: uppercase; }
+  .tech-col h3 small { font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em; color: var(--muted); text-transform: none; font-weight: 400; margin-left: 8px; }
+  .tech-list { list-style: none; margin: 20px 0 0; padding: 0; }
+  .tech-list li { padding: 16px 0; border-top: 1px solid var(--line); font-size: 14.5px; color: var(--muted); }
+  .tech-list li b { display: block; color: var(--ink); font-weight: 600; margin-bottom: 4px; font-size: 15.5px; font-family: var(--display); letter-spacing: -0.01em; }
+
+  /* Decision */
+  .decide { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  .decide-card { position: relative; border: 1px solid var(--line); border-radius: var(--radius); padding: 32px; background: var(--panel); overflow: hidden; }
+  .decide-card::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; }
+  .decide-card.a::before { background: var(--violet); box-shadow: 0 0 22px var(--violet); }
+  .decide-card.b::before { background: var(--gold); box-shadow: 0 0 22px var(--gold); }
+  .decide-card h3 { font-size: 21px; }
+  .decide-card .sub { color: var(--muted); margin-top: 10px; font-size: 15px; }
+  .decide-card ul { margin: 18px 0 0; padding-left: 18px; color: var(--muted); font-size: 14.5px; }
+  .decide-card li { margin-bottom: 8px; }
+
+  /* Note */
+  .note { border: 1px dashed var(--gold); border-radius: var(--radius); padding: 28px; background: rgba(255,178,62,0.07); }
+  .note h3 { font-size: 19px; color: var(--gold); }
+  .note p { color: #E8D6B8; font-size: 15px; margin-top: 10px; }
+
+  /* FAQ */
+  .faq details { border-bottom: 1px solid var(--line); }
+  .faq summary { cursor: pointer; list-style: none; padding: 22px 0; font-family: var(--display); font-weight: 500; font-size: 18px; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary .sign { color: var(--violet-2); font-weight: 700; font-size: 22px; transition: transform .2s; }
+  .faq details[open] summary .sign { transform: rotate(45deg); }
+  .faq details p { color: var(--muted); padding: 0 0 22px; font-size: 15px; max-width: 72ch; }
+
+  /* CTA band */
+  .cta-band { position: relative; border-radius: 28px; padding: 64px 40px; text-align: center; border: 1px solid var(--line); background: var(--grad-soft); overflow: hidden; }
+  .cta-band h2 { font-size: clamp(32px, 5vw, 56px); text-transform: uppercase; }
+  .cta-band p { color: var(--muted); margin: 16px auto 0; max-width: 48ch; font-size: 17px; }
+  .cta-band .cta-row { justify-content: center; }
+
+  /* Footer */
+  .site-footer { border-top: 1px solid var(--line); padding: 54px 0 64px; }
+  .foot-grid { display: flex; justify-content: space-between; gap: 28px; flex-wrap: wrap; align-items: flex-start; }
+  .site-footer p { font-size: 14px; color: var(--muted); max-width: 48ch; margin-top: 14px; }
+  .site-footer a.inline { color: var(--violet-2); text-decoration: none; }
+  .site-footer a.inline:hover { text-decoration: underline; }
+
+  /* Reveal */
   .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
   .reveal.in { opacity: 1; transform: none; }
+
   :focus-visible { outline: 3px solid var(--violet-2); outline-offset: 3px; border-radius: 6px; }
 
-  @media (max-width: 860px) {
-    .traj-grid { grid-template-columns: 1fr; }
+  @media (max-width: 920px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+    .hero .lede { max-width: none; }
+    .steps { grid-template-columns: 1fr 1fr; }
+    .models { grid-template-columns: 1fr; }
+    .ex-grid, .plat-grid, .decide, .tech-grid { grid-template-columns: 1fr; }
     .nav-links, .nav .nav-cta { display: none; }
-    .nav-links.open { display: flex; position: absolute; top: 68px; left: 0; right: 0; flex-direction: column; gap: 0; background: var(--bg-2); border-bottom: 1px solid var(--line); padding: 8px 24px 18px; }
+    .nav-links.open { display: flex; position: absolute; top: 68px; left: 0; right: 0; flex-direction: column; gap: 0; background: var(--bg2); border-bottom: 1px solid var(--line); padding: 8px 24px 18px; }
     .nav-links.open a { padding: 13px 0; border-bottom: 1px solid var(--line); }
     .nav-toggle { display: inline-flex; }
+  }
+  @media (max-width: 540px) {
+    .steps { grid-template-columns: 1fr; }
+    .hero { padding: 56px 0 28px; }
+    .def, .cta-band { padding: 32px 24px; }
   }
 </style>
 </head>
@@ -139,203 +248,316 @@
 
 <header class="site-header">
   <div class="wrap nav">
-    <a class="brand" href="#top">Francisco <span class="grad-text">Leitao</span></a>
+    <a class="brand" href="#top"><span class="brand-mark">A</span> Marketing de <span class="grad-text">Afiliados</span></a>
     <nav class="nav-links" id="navlinks">
-      <a href="#areas">Expertise</a>
-      <a href="#trayectoria">Trayectoria</a>
+      <a href="/">← Experiencia</a>
+      <a href="#que-es">Qué es</a>
+      <a href="#como-funciona">Cómo funciona</a>
+      <a href="#ejemplos">Ejemplos</a>
+      <a href="#plataformas">Plataformas</a>
+      <a href="#tecnicas">Técnicas</a>
+      <a href="#faq">Preguntas</a>
     </nav>
-    <a class="nav-cta" href="https://www.linkedin.com/in/francisco-leitao/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    <a class="nav-cta" href="#plataformas">Explorar plataformas</a>
     <button class="nav-toggle" id="navtoggle" aria-label="Abrir menú" aria-expanded="false">≡</button>
   </div>
 </header>
 
 <main id="top">
 
+  <!-- HERO -->
   <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="reveal">
+        <span class="eyebrow">Guía visual · 2026</span>
+        <h1>El marketing de <span class="grad-text">afiliados</span>, explicado como se debe.</h1>
+        <p class="lede">Alguien recomienda un producto/servicio con un enlace propio y gana una comisión cuando esa recomendación termina en una conversión. Acá lo desarmamos pieza por pieza, con ejemplos reales y a dónde ir.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#como-funciona">Ver cómo funciona →</a>
+          <a class="btn btn-ghost" href="#ejemplos">Ver ejemplos</a>
+        </div>
+      </div>
+
+      <div class="diagram-card reveal">
+        <svg viewBox="0 0 460 360" role="img" aria-labelledby="dt dd" xmlns="http://www.w3.org/2000/svg">
+          <title id="dt">El ciclo del marketing de afiliados</title>
+          <desc id="dd">El anunciante ofrece un producto o servicio y comisión a la plataforma, que entrega un enlace al afiliado, que promociona al consumidor, que compra al anunciante, y se paga la comisión al afiliado.</desc>
+          <defs>
+            <linearGradient id="gg" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#5B4BFF" /><stop offset="100%" stop-color="#1FD6FF" />
+            </linearGradient>
+            <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+              <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+            </marker>
+          </defs>
+
+          <g>
+            <rect x="28" y="34" width="152" height="60" rx="13" fill="rgba(91,75,255,0.10)" stroke="#5B4BFF" stroke-width="1.3" />
+            <text x="104" y="60" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="15" fill="#ECECF6">Anunciante</text>
+            <text x="104" y="78" text-anchor="middle" font-family="Hanken Grotesk,sans-serif" font-size="11.5" fill="#9C9AB2">Producto o servicio</text>
+          </g>
+          <g>
+            <rect x="280" y="34" width="152" height="60" rx="13" fill="rgba(91,75,255,0.10)" stroke="#5B4BFF" stroke-width="1.3" />
+            <text x="356" y="60" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="15" fill="#ECECF6">Plataforma</text>
+            <text x="356" y="78" text-anchor="middle" font-family="Hanken Grotesk,sans-serif" font-size="11.5" fill="#9C9AB2">Tracking y pagos</text>
+          </g>
+          <g>
+            <rect x="280" y="266" width="152" height="60" rx="13" fill="rgba(31,214,255,0.08)" stroke="#1FD6FF" stroke-width="1.3" />
+            <text x="356" y="292" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="15" fill="#ECECF6">Afiliado</text>
+            <text x="356" y="310" text-anchor="middle" font-family="Hanken Grotesk,sans-serif" font-size="11.5" fill="#9C9AB2">Promociona</text>
+          </g>
+          <g>
+            <rect x="28" y="266" width="152" height="60" rx="13" fill="rgba(31,214,255,0.08)" stroke="#1FD6FF" stroke-width="1.3" />
+            <text x="104" y="292" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="15" fill="#ECECF6">Consumidor</text>
+            <text x="104" y="310" text-anchor="middle" font-family="Hanken Grotesk,sans-serif" font-size="11.5" fill="#9C9AB2">Compra final</text>
+          </g>
+
+          <g>
+            <rect x="166" y="154" width="128" height="52" rx="13" fill="rgba(255,178,62,0.12)" stroke="#FFB23E" stroke-width="1.3" />
+            <text x="230" y="176" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="14" fill="#FFD79B">Comisión</text>
+            <text x="230" y="193" text-anchor="middle" font-family="Hanken Grotesk,sans-serif" font-size="11" fill="#E0B97E">por venta</text>
+          </g>
+
+          <line class="flow" x1="184" y1="64" x2="276" y2="64" stroke="url(#gg)" stroke-width="2" marker-end="url(#ah)" />
+          <line class="flow" x1="356" y1="98" x2="356" y2="262" stroke="url(#gg)" stroke-width="2" marker-end="url(#ah)" />
+          <line class="flow" x1="276" y1="296" x2="184" y2="296" stroke="url(#gg)" stroke-width="2" marker-end="url(#ah)" />
+          <line class="flow" x1="104" y1="262" x2="104" y2="98" stroke="url(#gg)" stroke-width="2" marker-end="url(#ah)" />
+
+          <line x1="150" y1="94" x2="172" y2="151" stroke="#FFB23E" stroke-width="1.4" stroke-dasharray="4 4" marker-end="url(#ah)" />
+          <line x1="288" y1="200" x2="312" y2="263" stroke="#FFB23E" stroke-width="1.4" stroke-dasharray="4 4" marker-end="url(#ah)" />
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUE ES -->
+  <section id="que-es">
     <div class="wrap reveal">
-      <span class="eyebrow">Growth · Marketing · Comercial</span>
-      <h1>Francisco <span class="grad-text">Leitao</span></h1>
-      <p class="intro">Más de 15 años liderando áreas comerciales, de marketing y growth en empresas de consumo masivo, tecnología y logística: Cervecería Chile AB InBev, Cooperativa Capel, PedidosYa, LOMI, OOH Publicidad y TW Logística.</p>
-      <div class="cta-row">
-        <a class="btn btn-primary" href="#areas">Ver áreas de expertise →</a>
-        <a class="btn btn-ghost" href="https://www.linkedin.com/in/francisco-leitao/" target="_blank" rel="noopener">Ver LinkedIn</a>
-      </div>
-      <div class="creds">
-        <span class="cred"><b>+15 años</b> en growth, ventas y marketing</span>
-        <span class="cred">Ingeniero Civil Industrial · <b>UAI</b></span>
-        <span class="cred">MBA · <b>PUC</b></span>
-        <span class="cred">Digital Business Strategy · <b>MIT Sloan</b></span>
+      <div class="def">
+        <span class="eyebrow">En una frase</span>
+        <p class="big">Es un modelo <b class="grad-text">por desempeño</b>: una empresa solo paga cuando una recomendación con enlace propio genera un <b class="grad-text">resultado real</b> — una venta, un registro o un clic.</p>
       </div>
     </div>
   </section>
 
-  <section id="areas">
+  <!-- COMO FUNCIONA -->
+  <section id="como-funciona">
     <div class="wrap">
       <div class="section-head reveal">
-        <h2>Áreas de expertise</h2>
+        <span class="eyebrow">El ciclo</span>
+        <h2>Cómo funciona, paso a paso</h2>
+        <p>Cinco pasos que se repiten cada vez que alguien compra a través de una recomendación. El orden importa: cada paso habilita el siguiente.</p>
       </div>
-      <div class="areas">
+      <div class="steps">
+        <div class="step reveal"><span class="num">01</span><h3>Se define el trato</h3><p>El anunciante acuerda qué producto o servicio promocionar y cuánto paga por cada resultado.</p></div>
+        <div class="step reveal"><span class="num">02</span><h3>Enlace único</h3><p>La plataforma genera un enlace de seguimiento exclusivo para el afiliado.</p></div>
+        <div class="step reveal"><span class="num">03</span><h3>Se promociona</h3><p>El afiliado comparte ese enlace en su contenido, redes o sitio web.</p></div>
+        <div class="step reveal"><span class="num">04</span><h3>Alguien compra</h3><p>El consumidor hace clic y compra. La venta queda atribuida vía cookie o parámetro.</p></div>
+        <div class="step reveal"><span class="num">05</span><h3>Se paga la comisión</h3><p>La plataforma liquida la comisión al afiliado por el resultado generado.</p></div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Para activar una tarjeta: cambia el <div class="area is-soon"> por <a class="area" href="https://TU-URL.vercel.app" target="_blank" rel="noopener"> y deja el <span class="go active"> -->
+  <!-- MODELOS -->
+  <section id="modelos">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Cómo se paga</span>
+        <h2>Tres formas de comisión</h2>
+        <p>El "resultado" que dispara el pago cambia según el acuerdo. Estas son las tres más comunes.</p>
+      </div>
+      <div class="models">
+        <div class="model reveal"><span class="tag">CPA</span><h3>Por acción o venta</h3><p>Se paga cuando hay una compra. Es el modelo más usado porque alinea el riesgo: el anunciante paga solo si vende.</p></div>
+        <div class="model reveal"><span class="tag">CPL</span><h3>Por lead o registro</h3><p>Se paga cuando alguien deja sus datos o se registra, aunque todavía no compre. Útil para servicios y captación.</p></div>
+        <div class="model reveal"><span class="tag">CPC</span><h3>Por clic</h3><p>Se paga por cada clic en el enlace. Hoy es menos frecuente: es más fácil de inflar y más difícil de atribuir a valor.</p></div>
+      </div>
+    </div>
+  </section>
 
-        <div class="area is-soon" role="article">
-          <span class="tag">Comercial</span>
-          <h3>Estrategia y liderazgo comercial</h3>
-          <p>Dirección de áreas comerciales B2C, B2B y SaaS: pipeline, pricing y equipos orientados a resultados.</p>
-          <span class="go soon">Próximamente</span>
+  <!-- EJEMPLOS -->
+  <section id="ejemplos">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Así se ve en la práctica</span>
+        <h2>Ejemplos reales</h2>
+        <p>Cuatro situaciones cotidianas donde el marketing de afiliados ya está funcionando. Mira quién recomienda, qué plataforma usa y por qué gana.</p>
+      </div>
+      <div class="ex-grid">
+        <div class="ex reveal">
+          <div class="ex-n">Ejemplo 01</div>
+          <h3>El blog de reseñas</h3>
+          <p>Un sitio compara herramientas o gadgets y enlaza cada uno con su link de Amazon Associates o Awin. Cuando un lector compra, el blog se lleva una comisión sin haber tocado el producto.</p>
+          <span class="ex-meta">Modelo CPA · Amazon / Awin</span>
+        </div>
+        <div class="ex reveal">
+          <div class="ex-n">Ejemplo 02</div>
+          <h3>El creador en redes</h3>
+          <p>Alguien en Instagram o TikTok comparte links de Mercado Libre Afiliados u Hotmart. Gana un porcentaje por cada venta aprobada que sale de su recomendación, en moneda local.</p>
+          <span class="ex-meta">Modelo CPA · Mercado Libre / Hotmart</span>
+        </div>
+        <div class="ex reveal">
+          <div class="ex-n">Ejemplo 03</div>
+          <h3>El SaaS con programa propio</h3>
+          <p>Una empresa de software por suscripción usa Rewardful o PartnerStack para que partners la recomienden. La gracia: comisión recurrente cada mes que el cliente referido sigue pagando.</p>
+          <span class="ex-meta">Comisión recurrente · Rewardful / PartnerStack</span>
+        </div>
+        <div class="ex reveal">
+          <div class="ex-n">Ejemplo 04</div>
+          <h3>El programa de una marca</h3>
+          <p>Un hotel o un ecommerce monta su propio programa con Tapfiliate o Refersion, entrega enlaces a embajadores y paga una comisión por cada reserva o compra que generan.</p>
+          <span class="ex-meta">Programa propio · Tapfiliate / Refersion</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLATAFORMAS -->
+  <section id="plataformas">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">A dónde ir</span>
+        <h2>Plataformas, según lo que buscas</h2>
+        <p>Dos caminos. Si quieres ganar promocionando, te unes a una red. Si tienes un producto o servicio y quieres tu propio programa, instalas un software. Cada nombre lleva a su sitio oficial.</p>
+      </div>
+      <div class="plat-grid">
+
+        <div class="plat-col reveal">
+          <div class="plat-col-head"><span class="dot affil"></span><h3>Para afiliados</h3></div>
+          <p class="role">Redes donde te unes a programas que ya existen.</p>
+          <a class="plat-item" href="https://hotmart.com/es/afiliados" target="_blank" rel="noopener"><span class="plat-name">Hotmart <span class="arrow">↗</span></span><span class="plat-desc">Infoproductos · fuerte en LATAM</span></a>
+          <a class="plat-item" href="https://www.mercadolibre.cl/l/afiliados" target="_blank" rel="noopener"><span class="plat-name">Mercado Libre Afiliados <span class="arrow">↗</span></span><span class="plat-desc">Ecommerce · Chile</span></a>
+          <a class="plat-item" href="https://affiliate-program.amazon.com" target="_blank" rel="noopener"><span class="plat-name">Amazon Associates <span class="arrow">↗</span></span><span class="plat-desc">Global · sin sede en Chile</span></a>
+          <a class="plat-item" href="https://www.awin.com" target="_blank" rel="noopener"><span class="plat-name">Awin <span class="arrow">↗</span></span><span class="plat-desc">Red global · marcas grandes</span></a>
+          <a class="plat-item" href="https://www.cj.com" target="_blank" rel="noopener"><span class="plat-name">CJ Affiliate <span class="arrow">↗</span></span><span class="plat-desc">Veterana · EE.UU./Europa</span></a>
+          <a class="plat-item" href="https://www.shareasale.com" target="_blank" rel="noopener"><span class="plat-name">ShareASale <span class="arrow">↗</span></span><span class="plat-desc">Ecommerce y nichos</span></a>
+          <a class="plat-item" href="https://impact.com" target="_blank" rel="noopener"><span class="plat-name">Impact <span class="arrow">↗</span></span><span class="plat-desc">Marcas enterprise</span></a>
+          <a class="plat-item" href="https://www.clickbank.com" target="_blank" rel="noopener"><span class="plat-name">ClickBank <span class="arrow">↗</span></span><span class="plat-desc">Productos digitales</span></a>
         </div>
 
-        <div class="area is-soon" role="article">
-          <span class="tag">Comercial</span>
-          <h3>Estrategias y programas de incentivos</h3>
-          <p>Esquemas de incentivos para fuerza de ventas, canales y partners que alinean esfuerzo con metas.</p>
-          <span class="go soon">Próximamente</span>
-        </div>
-
-        <div class="area is-soon" role="article">
-          <span class="tag">Data</span>
-          <h3>CRM</h3>
-          <p>Implementación y operación de CRM para centralizar clientes y ordenar marketing, ventas y soporte.</p>
-          <span class="go soon">Próximamente</span>
-        </div>
-
-        <div class="area is-soon" role="article">
-          <span class="tag">IA</span>
-          <h3>Inteligencia Artificial aplicada</h3>
-          <p>Agentes y chatbots, integración de modelos de lenguaje en productos y dashboards, y automatización con IA para marketing, ventas y data.</p>
-          <span class="go soon">Próximamente</span>
-        </div>
-
-        <div class="area is-soon" role="article">
-          <span class="tag">Producto</span>
-          <h3>Desarrollo de productos web y app</h3>
-          <p>Plataformas y aplicaciones a medida, del prototipo al producto en producción, pensadas para escalar.</p>
-          <span class="go soon">Próximamente</span>
-        </div>
-
-        <div class="area is-soon" role="article">
-          <span class="tag">Performance</span>
-          <h3>Paid Media</h3>
-          <p>Campañas en Google, Meta y más, optimizadas por las métricas que mueven el negocio, no vanity metrics.</p>
-          <span class="go soon">Próximamente</span>
-        </div>
-
-        <div class="area is-soon" role="article">
-          <span class="tag">Orgánico</span>
-          <h3>SEO &amp; GEO</h3>
-          <p>Posicionamiento en buscadores y en motores de IA, con contenido que responde la intención real de compra.</p>
-          <span class="go soon">Próximamente</span>
-        </div>
-
-        <div class="area is-soon" role="article">
-          <span class="tag">Automatización</span>
-          <h3>Inbound Marketing &amp; automatizaciones</h3>
-          <p>Email, WhatsApp, SMS y push con flujos automáticos: carrito abandonado, post-venta, reactivación y más.</p>
-          <span class="go soon">Próximamente</span>
-        </div>
-
-        <div class="area is-soon" role="article">
-          <span class="tag">Contenido</span>
-          <h3>Contenido gráfico y producción audiovisual</h3>
-          <p>Cápsulas, piezas y video para RRSS y campañas, con identidad de marca y foco en conversión.</p>
-          <span class="go soon">Próximamente</span>
-        </div>
-
-        <a class="area" href="/marketing-de-afiliados/">
-          <span class="tag">Crecimiento</span>
-          <h3>Marketing de Afiliados</h3>
-          <p>Modelos por desempeño de punta a punta: redes, tracking, comisiones y programas propios.</p>
-          <span class="go active">Ver más <span class="ar">→</span></span>
-        </a>
-
-        <div class="area is-soon" role="article">
-          <span class="tag">Crecimiento</span>
-          <h3>Programas de Referidos</h3>
-          <p>Convierte a tus clientes en canal de adquisición con referidos medibles y bien incentivados.</p>
-          <span class="go soon">Próximamente</span>
-        </div>
-
-        <div class="area is-soon" role="article">
-          <span class="tag">Retención</span>
-          <h3>Programas de Fidelidad / Loyalty</h3>
-          <p>Sistemas de puntos, niveles y beneficios que aumentan la recompra y el valor de vida del cliente.</p>
-          <span class="go soon">Próximamente</span>
-        </div>
-
-        <div class="area is-soon" role="article">
-          <span class="tag">Social</span>
-          <h3>Redes Sociales</h3>
-          <p>Estrategia, contenido y comunidad para construir marca y demanda en los canales correctos.</p>
-          <span class="go soon">Próximamente</span>
-        </div>
-
-        <div class="area is-soon" role="article">
-          <span class="tag">Marca</span>
-          <h3>Estrategias de PR</h3>
-          <p>Posicionamiento de marca y vocería: relato, medios y reputación al servicio del negocio.</p>
-          <span class="go soon">Próximamente</span>
-        </div>
-
-        <div class="area is-soon" role="article">
-          <span class="tag">Negocio</span>
-          <h3>Alianzas Estratégicas</h3>
-          <p>Partnerships y desarrollo de negocio para abrir mercados y crecer vía colaboración.</p>
-          <span class="go soon">Próximamente</span>
+        <div class="plat-col reveal">
+          <div class="plat-col-head"><span class="dot biz"></span><h3>Para empresas</h3></div>
+          <p class="role">Software para montar y administrar tu propio programa.</p>
+          <a class="plat-item" href="https://tapfiliate.com" target="_blank" rel="noopener"><span class="plat-name">Tapfiliate <span class="arrow">↗</span></span><span class="plat-desc">General · ecommerce y SaaS</span></a>
+          <a class="plat-item" href="https://www.refersion.com" target="_blank" rel="noopener"><span class="plat-name">Refersion <span class="arrow">↗</span></span><span class="plat-desc">Ecommerce / Shopify</span></a>
+          <a class="plat-item" href="https://www.postaffiliatepro.com" target="_blank" rel="noopener"><span class="plat-name">Post Affiliate Pro <span class="arrow">↗</span></span><span class="plat-desc">Veterano · muy configurable</span></a>
+          <a class="plat-item" href="https://trackdesk.com" target="_blank" rel="noopener"><span class="plat-name">Trackdesk <span class="arrow">↗</span></span><span class="plat-desc">Moderno · plan gratis</span></a>
+          <a class="plat-item" href="https://partnerstack.com" target="_blank" rel="noopener"><span class="plat-name">PartnerStack <span class="arrow">↗</span></span><span class="plat-desc">SaaS B2B · comisión recurrente</span></a>
+          <a class="plat-item" href="https://www.rewardful.com" target="_blank" rel="noopener"><span class="plat-name">Rewardful <span class="arrow">↗</span></span><span class="plat-desc">SaaS · integra Stripe/Paddle</span></a>
+          <a class="plat-item" href="https://firstpromoter.com" target="_blank" rel="noopener"><span class="plat-name">FirstPromoter <span class="arrow">↗</span></span><span class="plat-desc">SaaS de suscripción</span></a>
+          <a class="plat-item" href="https://uppromote.com" target="_blank" rel="noopener"><span class="plat-name">UpPromote <span class="arrow">↗</span></span><span class="plat-desc">Nativo de Shopify</span></a>
         </div>
 
       </div>
     </div>
   </section>
 
-  <section id="trayectoria">
+  <!-- DECISION -->
+  <section id="cual-elijo">
     <div class="wrap">
       <div class="section-head reveal">
-        <h2>Trayectoria</h2>
-        <p>Áreas de conocimiento y aplicación</p>
+        <span class="eyebrow">¿Red o software propio?</span>
+        <h2>Cuál te conviene</h2>
       </div>
-      <div class="traj-grid">
-        <div class="traj-col reveal">
-          <h3>Experiencia</h3>
-          <ul class="traj-list">
-            <li><div class="t">Commercial &amp; Marketing Manager</div><div class="s">TW Logística — operador 3PL (2025 · actualidad)</div></li>
-            <li><div class="t">Growth Advisor Partner</div><div class="s">GOTOMARKET (2020 · actualidad)</div></li>
-            <li><div class="t">Head of Growth</div><div class="s">OOH Publicidad — eCommerce / SaaS B2B (2024–2025)</div></li>
-            <li><div class="t">Head of Growth &amp; Cofundador</div><div class="s">Lomi — eCommerce, dark stores y última milla (2020–2024)</div></li>
-            <li><div class="t">Head of Growth</div><div class="s">PedidosYa (2019–2020)</div></li>
-            <li><div class="t">Gerente Comercial Zona Centro</div><div class="s">Cooperativa Capel (2016–2019)</div></li>
-            <li><div class="t">Gerente de Trade Marketing</div><div class="s">Cervecería AB InBev Chile (2012–2016)</div></li>
+      <div class="decide">
+        <div class="decide-card a reveal">
+          <h3>Unirte a una red</h3>
+          <p class="sub">Ideal si quieres empezar a promocionar productos o servicios de otros sin montar nada.</p>
+          <ul>
+            <li>Ya tiene anunciantes y herramientas listas.</li>
+            <li>Cobra comisión o fees sobre cada transacción.</li>
+            <li>Menos control sobre la marca y las reglas.</li>
           </ul>
         </div>
-        <div class="traj-col reveal">
-          <h3>Formación</h3>
-          <ul class="traj-list">
-            <li><div class="t">Ingeniería Civil Industrial · Minor Gestión TI</div><div class="s">Universidad Adolfo Ibáñez</div></li>
-            <li><div class="t">MBA</div><div class="s">Pontificia Universidad Católica de Chile</div></li>
-            <li><div class="t">Digital Business Strategy</div><div class="s">MIT Sloan School of Management</div></li>
-            <li><div class="t">Marketing Digital &amp; eCommerce</div><div class="s">Universidad Adolfo Ibáñez</div></li>
-            <li><div class="t">Desarrollo Web</div><div class="s">Desafío Latam</div></li>
+        <div class="decide-card b reveal">
+          <h3>Montar tu propio programa</h3>
+          <p class="sub">Ideal si tienes un producto o servicio y quieres reclutar afiliados que lo promocionen.</p>
+          <ul>
+            <li>Control total: tu marca, tus comisiones, tus datos.</li>
+            <li>Pagas una suscripción al software, no comisión por venta.</li>
+            <li>Tú tienes que reclutar y activar a los afiliados.</li>
           </ul>
         </div>
       </div>
+    </div>
+  </section>
 
-      <p class="pills-head reveal">Certificaciones y formación continua</p>
-      <div class="pills reveal">
-        <span class="pill">Reforge · Growth &amp; Performance</span>
-        <span class="pill">Lean Six Sigma · Yellow Belt</span>
-        <span class="pill">IA · Google &amp; Microsoft</span>
+  <!-- TECNICAS -->
+  <section id="tecnicas">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Llevarlo al siguiente nivel</span>
+        <h2>Técnicas para crecer</h2>
+        <p>Dos miradas del mismo juego: cómo una empresa potencia su red de afiliados, y cómo un afiliado vende más con sus enlaces.</p>
       </div>
+      <div class="tech-grid">
 
-      <p class="pills-head reveal">Idiomas</p>
-      <div class="pills reveal">
-        <span class="pill">Español · nativo</span>
-        <span class="pill">Inglés · avanzado</span>
-        <span class="pill">Portugués · medio</span>
+        <div class="tech-col reveal">
+          <div class="plat-col-head"><span class="dot biz"></span><h3>Potencia tu red <small>empresas</small></h3></div>
+          <ul class="tech-list">
+            <li><b>Recluta a los correctos, no a todos</b>Busca creadores o medios cuya audiencia ya calza con tu oferta. Pocos afiliados afines venden más que cientos al azar.</li>
+            <li><b>Comisiones claras y atractivas</b>Ofrece un porcentaje competitivo y, si es un servicio por suscripción, comisión recurrente para que el partner se quede.</li>
+            <li><b>Entrégales todo listo</b>Banners, textos, enlaces y ejemplos de uso. Mientras menos fricción, más venden por ti.</li>
+            <li><b>Onboarding y comunicación constante</b>Guía a los nuevos, comparte novedades, rankings y buenas prácticas cada cierto tiempo.</li>
+            <li><b>Incentivos por desempeño</b>Bonos por metas, comisiones escalonadas y concursos para activar a tus mejores afiliados.</li>
+            <li><b>Pagos puntuales y atribución transparente</b>Cookies y ventanas claras, pagos a tiempo. La confianza es lo que retiene partners.</li>
+            <li><b>Mide y enfócate en el 20%</b>Detecta los afiliados que generan el grueso de las ventas y concentra ahí tu energía.</li>
+          </ul>
+        </div>
+
+        <div class="tech-col reveal">
+          <div class="plat-col-head"><span class="dot affil"></span><h3>Vende más <small>afiliados</small></h3></div>
+          <ul class="tech-list">
+            <li><b>Recomienda lo que conoces</b>Promociona productos o servicios que de verdad usaste. La confianza convierte mucho más que el volumen.</li>
+            <li><b>Crea contenido que resuelve</b>Reseñas honestas, comparativas y tutoriales que responden las dudas reales de quien está por comprar.</li>
+            <li><b>Ubica bien el enlace</b>Dentro del contenido relevante y con un llamado a la acción claro. Nunca como spam suelto.</li>
+            <li><b>Apunta a búsquedas con intención</b>Contenido evergreen para términos del tipo "mejor X para Y" que traen tráfico de compra constante.</li>
+            <li><b>Construye un canal propio</b>Una lista de correo o comunidad te da audiencia que no depende del algoritmo de turno.</li>
+            <li><b>Sé transparente</b>Declara que es un enlace de afiliado. La honestidad cuida tu credibilidad y cumple con la normativa.</li>
+            <li><b>Prueba, mide y duplica</b>Compara qué enlaces y formatos convierten mejor, y pon más esfuerzo en lo que ya funciona.</li>
+          </ul>
+        </div>
+
       </div>
+    </div>
+  </section>
 
-      <p class="pills-head reveal">Reconocimientos</p>
-      <div class="pills reveal">
-        <span class="pill award">1er lugar global · Sales Process ABI (Trade Marketing)</span>
-        <span class="pill award">1er lugar Sudamérica · AB InBev — reposición compartida con Coca-Cola Andina</span>
+  <!-- NOTA -->
+  <section id="chile" style="padding-top: 0;">
+    <div class="wrap reveal">
+      <div class="note">
+        <h3>Antes de comprometerte: revisa los pagos</h3>
+        <p>La mayoría de estas plataformas liquidan por PayPal, Wise, Payoneer o transferencia internacional, no siempre con métodos locales en pesos. Si vas a pagar o cobrar comisiones en Chile, confirma el método de pago y las condiciones vigentes de cada plataforma antes de decidir. Las descripciones de esta página son orientativas y pueden cambiar.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Dudas frecuentes</span>
+        <h2>Preguntas rápidas</h2>
+      </div>
+      <div class="faq reveal">
+        <details><summary>¿Necesito una audiencia grande para empezar? <span class="sign">+</span></summary><p>No para registrarte. Varias redes (como Hotmart) no exigen sitio web ni un mínimo de seguidores. Dicho esto, los resultados dependen de tener una audiencia que confíe en tus recomendaciones, así sea pequeña pero relevante.</p></details>
+        <details><summary>¿El comprador paga más por usar un enlace de afiliado? <span class="sign">+</span></summary><p>No. El precio es el mismo. La comisión sale del margen del anunciante, no de un recargo al consumidor.</p></details>
+        <details><summary>¿Qué es la "cookie" o ventana de atribución? <span class="sign">+</span></summary><p>Es el período durante el cual una venta se sigue atribuyendo al afiliado después del clic. Puede ir de 24 horas a varios meses según la plataforma, y define hasta cuándo cuentas con la comisión si la persona compra más tarde.</p></details>
+        <details><summary>¿Es lo mismo afiliados que referidos o influencers? <span class="sign">+</span></summary><p>Se solapan. "Referidos" suele ser cliente que trae a otro cliente; "afiliados" implica un enlace con seguimiento y comisión por resultado; los influencers operan como afiliados cuando usan enlaces medibles. La clave es la atribución medible y el pago por desempeño.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section id="empezar">
+    <div class="wrap reveal">
+      <div class="cta-band">
+        <span class="eyebrow">Tu próximo paso</span>
+        <h2>¿Listo para partir? <span class="grad-text">Es hoy.</span></h2>
+        <p>Elige tu camino: únete a una red para empezar a promocionar, o monta tu propio programa si tienes un producto o servicio que vender.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#plataformas">Ver plataformas →</a>
+          <a class="btn btn-ghost" href="#como-funciona">Repasar cómo funciona</a>
+        </div>
       </div>
     </div>
   </section>
@@ -343,9 +565,12 @@
 </main>
 
 <footer class="site-footer">
-  <div class="wrap">
-    <a class="brand" href="#top">Francisco <span class="grad-text">Leitao</span></a>
-    <p>© <span id="y"></span> Francisco Leitao. Todos los derechos reservados.</p>
+  <div class="wrap foot-grid">
+    <div>
+      <a class="brand" href="#top"><span class="brand-mark">A</span> Marketing de <span class="grad-text">Afiliados</span></a>
+      <p>Una guía simple para entender el marketing de afiliados y saber a dónde ir. Los enlaces apuntan a los sitios oficiales de cada plataforma.</p>
+    </div>
+    <p>Hecho para aprender — no es asesoría financiera ni legal. Verifica condiciones, comisiones y métodos de pago directamente en cada plataforma.</p>
   </div>
 </footer>
 
@@ -360,15 +585,15 @@
     if (e.target.tagName === 'A') { links.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); }
   });
 
-  document.getElementById('y').textContent = new Date().getFullYear();
-
   var reveals = document.querySelectorAll('.reveal');
   if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches && 'IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
     reveals.forEach(function (el) { io.observe(el); });
-  } else { reveals.forEach(function (el) { el.classList.add('in'); }); }
+  } else {
+    reveals.forEach(function (el) { el.classList.add('in'); });
+  }
 </script>
 
 </body>
