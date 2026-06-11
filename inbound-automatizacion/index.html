@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Inbound &amp; Automatización</title>
+<meta name="description" content="Inbound marketing y automatizaciones: atraer con contenido y convertir con flujos automáticos por email, WhatsApp, SMS y push. Qué es, canales, plataformas y técnicas." />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="apple-touch-icon" href="/favicon-180.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #08080F; --bg-2: #0C0C18;
+    --panel: rgba(255,255,255,0.035); --panel-2: rgba(255,255,255,0.06);
+    --line: rgba(255,255,255,0.09); --line-2: rgba(255,255,255,0.16);
+    --ink: #ECECF6; --muted: #9C9AB2;
+    --violet: #5B4BFF; --violet-2: #8E82FF; --cyan: #1FD6FF; --gold: #FFB23E;
+    --grad: linear-gradient(120deg, #5B4BFF 0%, #1FD6FF 100%);
+    --grad-soft: linear-gradient(120deg, rgba(91,75,255,0.18), rgba(31,214,255,0.12));
+    --radius: 18px; --maxw: 1140px;
+    --display: "Space Grotesk", system-ui, sans-serif;
+    --body: "Hanken Grotesk", system-ui, sans-serif;
+    --mono: "Space Mono", ui-monospace, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+  body { margin: 0; font-family: var(--body); color: var(--ink); background: var(--bg); line-height: 1.62; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  body::before { content: ""; position: fixed; inset: 0; z-index: -2; background:
+      radial-gradient(700px 500px at 12% -5%, rgba(91,75,255,0.28), transparent 60%),
+      radial-gradient(600px 500px at 95% 5%, rgba(31,214,255,0.16), transparent 60%),
+      radial-gradient(800px 600px at 50% 110%, rgba(91,75,255,0.14), transparent 60%), var(--bg); }
+  body::after { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+      background-image: linear-gradient(rgba(255,255,255,0.022) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.022) 1px, transparent 1px);
+      background-size: 64px 64px; mask-image: radial-gradient(circle at 50% 30%, #000 30%, transparent 80%); }
+  a { color: inherit; }
+  h1,h2,h3 { font-family: var(--display); font-weight: 700; line-height: 1.04; margin: 0; letter-spacing: -0.02em; }
+  p { margin: 0; }
+  .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+  .eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--violet-2); display: inline-block; }
+  .grad-text { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+  .site-header { position: sticky; top: 0; z-index: 60; background: rgba(8,8,15,0.72); backdrop-filter: saturate(160%) blur(14px); border-bottom: 1px solid var(--line); }
+  .nav { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+  .nav-left { display: flex; align-items: center; gap: 16px; }
+  .back-link { display: inline-flex; align-items: center; gap: 7px; font-family: var(--display); font-weight: 600; font-size: 13.5px; text-decoration: none; color: var(--ink); background: var(--panel-2); border: 1px solid var(--line-2); border-radius: 999px; padding: 8px 15px; white-space: nowrap; transition: background .18s, border-color .18s; }
+  .back-link:hover { background: rgba(255,255,255,0.12); border-color: var(--violet-2); }
+  .nav-div { width: 1px; height: 26px; background: var(--line-2); }
+  .brand { display: flex; align-items: center; gap: 11px; font-family: var(--display); font-weight: 700; font-size: 18px; letter-spacing: -0.02em; text-decoration: none; }
+  .brand-mark { width: 30px; height: 30px; border-radius: 9px; background: var(--grad); display: inline-flex; align-items: center; justify-content: center; color: #fff; font-family: var(--mono); font-size: 14px; font-weight: 700; box-shadow: 0 0 24px rgba(91,75,255,0.55); }
+  .nav-links { display: flex; gap: 22px; align-items: center; }
+  .nav-links a { text-decoration: none; font-size: 14.5px; color: var(--muted); transition: color .18s; }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-toggle { display: none; background: var(--panel); border: 1px solid var(--line-2); color: var(--ink); border-radius: 10px; padding: 9px 11px; cursor: pointer; font-size: 18px; line-height: 1; }
+
+  .btn { display: inline-flex; align-items: center; gap: 9px; font-family: var(--display); font-weight: 500; font-size: 15px; padding: 14px 26px; border-radius: 999px; text-decoration: none; border: 1px solid transparent; transition: transform .16s, box-shadow .2s, border-color .2s, background .2s; }
+  .btn-primary { background: var(--grad); color: #07070d; box-shadow: 0 10px 34px rgba(91,75,255,0.42); }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 44px rgba(91,75,255,0.55); }
+  .btn-ghost { background: var(--panel); color: var(--ink); border-color: var(--line-2); }
+  .btn-ghost:hover { transform: translateY(-2px); border-color: var(--violet-2); }
+
+  .hero { padding: 80px 0 48px; }
+  .hero-grid { display: grid; grid-template-columns: 1.08fr 0.92fr; gap: 54px; align-items: center; }
+  .hero h1 { font-size: clamp(38px, 6vw, 66px); text-transform: uppercase; }
+  .hero .lede { margin-top: 24px; font-size: 18px; color: var(--muted); max-width: 40ch; }
+  .cta-row { display: flex; gap: 14px; margin-top: 32px; flex-wrap: wrap; }
+
+  .diagram-card { position: relative; background: var(--panel); border: 1px solid var(--line); border-radius: 26px; padding: 24px; box-shadow: 0 30px 80px rgba(0,0,0,0.4); }
+  .diagram-card::before { content: ""; position: absolute; inset: -1px; border-radius: 27px; padding: 1px; background: var(--grad); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; opacity: 0.5; pointer-events: none; }
+  .diagram-card svg { width: 100%; height: auto; display: block; }
+  .flow { stroke-dasharray: 6 8; }
+  @media (prefers-reduced-motion: no-preference) { .flow { animation: dash 1.5s linear infinite; } }
+  @keyframes dash { to { stroke-dashoffset: -28; } }
+
+  section { padding: 64px 0; position: relative; }
+  .section-head { max-width: 60ch; margin-bottom: 42px; }
+  .section-head h2 { font-size: clamp(30px, 4.4vw, 46px); margin-top: 14px; text-transform: uppercase; }
+  .section-head p { margin-top: 16px; color: var(--muted); font-size: 17px; max-width: 56ch; }
+
+  .def { position: relative; border-radius: 24px; padding: 52px; border: 1px solid var(--line); background: var(--grad-soft); overflow: hidden; }
+  .def .big { font-family: var(--display); font-weight: 600; font-size: clamp(23px, 3.6vw, 34px); line-height: 1.22; letter-spacing: -0.02em; margin-top: 18px; }
+  .def .big b { font-weight: 700; }
+
+  .steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+  .step { position: relative; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px 20px; transition: transform .2s, border-color .2s, background .2s; }
+  .step:hover { transform: translateY(-4px); border-color: var(--violet); background: var(--panel-2); }
+  .step .num { font-family: var(--mono); font-weight: 700; font-size: 14px; color: #fff; background: var(--grad); width: 38px; height: 38px; border-radius: 11px; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 0 22px rgba(91,75,255,0.5); }
+  .step h3 { font-size: 17px; margin: 18px 0 8px; }
+  .step p { font-size: 14px; color: var(--muted); }
+
+  .models { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 18px; }
+  .model { border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; background: var(--panel); transition: transform .2s, border-color .2s; }
+  .model:hover { transform: translateY(-4px); border-color: var(--cyan); }
+  .model .tag { font-family: var(--mono); font-weight: 700; font-size: 13px; letter-spacing: 0.06em; color: var(--cyan); }
+  .model h3 { font-size: 18px; margin: 10px 0 10px; }
+  .model p { font-size: 14.5px; color: var(--muted); }
+
+  .plat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  .plat-col { position: relative; background: var(--panel); border: 1px solid var(--line); border-radius: 22px; padding: 30px; }
+  .plat-col-head { display: flex; align-items: center; gap: 11px; }
+  .dot { width: 12px; height: 12px; border-radius: 50%; flex: none; }
+  .dot.a { background: var(--cyan); box-shadow: 0 0 14px var(--cyan); }
+  .dot.b { background: var(--violet); box-shadow: 0 0 14px var(--violet); }
+  .plat-col h3 { font-size: 20px; text-transform: uppercase; }
+  .plat-col .role { font-size: 14px; color: var(--muted); margin: 8px 0 18px; }
+  .plat-item { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; padding: 14px 0; border-top: 1px solid var(--line); text-decoration: none; transition: padding-left .18s, border-color .18s; }
+  .plat-item:hover { padding-left: 8px; border-color: var(--violet-2); }
+  .plat-name { font-family: var(--display); font-weight: 500; font-size: 15.5px; display: inline-flex; align-items: center; gap: 7px; white-space: nowrap; }
+  .plat-name .arrow { font-family: var(--mono); font-size: 13px; color: var(--violet-2); transition: transform .18s; }
+  .plat-item:hover .plat-name .arrow { transform: translate(2px,-2px); }
+  .plat-desc { font-size: 13px; color: var(--muted); text-align: right; }
+
+  .tech-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  .tech-col { background: var(--panel); border: 1px solid var(--line); border-radius: 22px; padding: 30px; }
+  .tech-col .plat-col-head { display: flex; align-items: center; gap: 11px; }
+  .tech-col h3 { font-size: 21px; text-transform: uppercase; }
+  .tech-list { list-style: none; margin: 20px 0 0; padding: 0; }
+  .tech-list li { padding: 16px 0; border-top: 1px solid var(--line); font-size: 14.5px; color: var(--muted); }
+  .tech-list li b { display: block; color: var(--ink); font-weight: 600; margin-bottom: 4px; font-size: 15.5px; font-family: var(--display); letter-spacing: -0.01em; }
+
+  .note { border: 1px dashed var(--cyan); border-radius: var(--radius); padding: 28px; background: rgba(31,214,255,0.06); }
+  .note h3 { font-size: 19px; color: var(--cyan); }
+  .note p { color: #Bfe9F5; font-size: 15px; margin-top: 10px; }
+
+  .faq details { border-bottom: 1px solid var(--line); }
+  .faq summary { cursor: pointer; list-style: none; padding: 22px 0; font-family: var(--display); font-weight: 500; font-size: 18px; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary .sign { color: var(--violet-2); font-weight: 700; font-size: 22px; transition: transform .2s; }
+  .faq details[open] summary .sign { transform: rotate(45deg); }
+  .faq details p { color: var(--muted); padding: 0 0 22px; font-size: 15px; max-width: 72ch; }
+
+  .cta-band { position: relative; border-radius: 28px; padding: 60px 40px; text-align: center; border: 1px solid var(--line); background: var(--grad-soft); overflow: hidden; }
+  .cta-band h2 { font-size: clamp(30px, 5vw, 52px); text-transform: uppercase; }
+  .cta-band p { color: var(--muted); margin: 16px auto 0; max-width: 48ch; font-size: 17px; }
+  .cta-band .cta-row { justify-content: center; }
+
+  .site-footer { border-top: 1px solid var(--line); padding: 48px 0 60px; }
+  .foot-grid { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; align-items: center; }
+  .site-footer .brand { font-size: 16px; }
+  .site-footer p { font-size: 14px; color: var(--muted); max-width: 50ch; }
+
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  :focus-visible { outline: 3px solid var(--violet-2); outline-offset: 3px; border-radius: 6px; }
+
+  @media (max-width: 920px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+    .hero .lede { max-width: none; }
+    .steps { grid-template-columns: 1fr 1fr; }
+    .plat-grid, .tech-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .nav-links.open { display: flex; position: absolute; top: 68px; left: 0; right: 0; flex-direction: column; gap: 0; background: var(--bg-2); border-bottom: 1px solid var(--line); padding: 8px 24px 18px; }
+    .nav-links.open a { padding: 13px 0; border-bottom: 1px solid var(--line); }
+    .nav-toggle { display: inline-flex; }
+  }
+  @media (max-width: 540px) {
+    .steps { grid-template-columns: 1fr; }
+    .hero { padding: 52px 0 24px; }
+    .def, .cta-band { padding: 32px 24px; }
+    .brand-text { display: none; }
+    .nav-div { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <div class="nav-left">
+      <a class="back-link" href="/">← Experiencia</a>
+      <span class="nav-div"></span>
+      <a class="brand" href="#top"><span class="brand-mark">I</span> <span class="brand-text">Inbound <span class="grad-text">&amp; Automatización</span></span></a>
+    </div>
+    <nav class="nav-links" id="navlinks">
+      <a href="#que-es">Qué es</a>
+      <a href="#como-funciona">Cómo funciona</a>
+      <a href="#canales">Canales</a>
+      <a href="#plataformas">Plataformas</a>
+      <a href="#tecnicas">Técnicas</a>
+      <a href="#faq">Preguntas</a>
+    </nav>
+    <button class="nav-toggle" id="navtoggle" aria-label="Abrir menú" aria-expanded="false">≡</button>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="reveal">
+        <span class="eyebrow">Marketing de atracción · 2026</span>
+        <h1>Atrae, nutre y <span class="grad-text">convierte en automático</span>.</h1>
+        <p class="lede">Inbound es atraer con contenido en vez de interrumpir. La automatización son los flujos que reaccionan solos al comportamiento de cada persona —por email, WhatsApp, SMS y push— mientras tú duermes.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#como-funciona">Ver cómo funciona →</a>
+          <a class="btn btn-ghost" href="#plataformas">Ver plataformas</a>
+        </div>
+      </div>
+
+      <div class="diagram-card reveal">
+        <svg viewBox="0 0 460 360" role="img" aria-labelledby="dt dd" xmlns="http://www.w3.org/2000/svg">
+          <title id="dt">Ejemplo de automatización: carrito abandonado</title>
+          <desc id="dd">Cuando un carrito queda abandonado, se espera una hora y se envía un email; si la persona compró, se convierte en cliente; si no, se le envía un WhatsApp con un cupón.</desc>
+          <defs>
+            <linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#5B4BFF" /><stop offset="100%" stop-color="#1FD6FF" /></linearGradient>
+            <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" /></marker>
+          </defs>
+
+          <rect x="115" y="12" width="230" height="40" rx="11" fill="rgba(255,178,62,0.14)" stroke="#FFB23E" stroke-width="1.2" />
+          <text x="230" y="32" text-anchor="middle" dominant-baseline="central" font-family="Space Grotesk,sans-serif" font-weight="600" font-size="13" fill="#FFD79B">Disparador · carrito abandonado</text>
+          <line class="flow" x1="230" y1="54" x2="230" y2="68" stroke="url(#gg)" stroke-width="2" marker-end="url(#ah)" />
+
+          <rect x="160" y="70" width="140" height="40" rx="11" fill="rgba(255,255,255,0.05)" stroke="#8E82FF" stroke-width="1.2" />
+          <text x="230" y="90" text-anchor="middle" dominant-baseline="central" font-family="Space Grotesk,sans-serif" font-weight="600" font-size="13" fill="#ECECF6">Espera 1 hora</text>
+          <line class="flow" x1="230" y1="110" x2="230" y2="124" stroke="url(#gg)" stroke-width="2" marker-end="url(#ah)" />
+
+          <rect x="150" y="124" width="160" height="42" rx="11" fill="rgba(91,75,255,0.16)" stroke="#5B4BFF" stroke-width="1.2" />
+          <text x="230" y="145" text-anchor="middle" dominant-baseline="central" font-family="Space Grotesk,sans-serif" font-weight="600" font-size="13" fill="#ECECF6">Email recordatorio</text>
+          <line class="flow" x1="230" y1="166" x2="230" y2="180" stroke="url(#gg)" stroke-width="2" marker-end="url(#ah)" />
+
+          <polygon points="230,182 298,214 230,246 162,214" fill="rgba(31,214,255,0.12)" stroke="#1FD6FF" stroke-width="1.3" />
+          <text x="230" y="214" text-anchor="middle" dominant-baseline="central" font-family="Space Grotesk,sans-serif" font-weight="600" font-size="12" fill="#ECECF6">¿Compró?</text>
+
+          <line x1="296" y1="218" x2="338" y2="292" stroke="#1FD6FF" stroke-width="1.6" marker-end="url(#ah)" />
+          <text x="320" y="252" text-anchor="middle" font-family="Space Mono,monospace" font-size="11" font-weight="700" fill="#1FD6FF">SÍ</text>
+          <line x1="164" y1="218" x2="124" y2="292" stroke="#8E82FF" stroke-width="1.6" marker-end="url(#ah)" />
+          <text x="138" y="252" text-anchor="middle" font-family="Space Mono,monospace" font-size="11" font-weight="700" fill="#8E82FF">NO</text>
+
+          <rect x="262" y="294" width="158" height="44" rx="11" fill="rgba(31,214,255,0.20)" stroke="#1FD6FF" stroke-width="1.3" />
+          <text x="341" y="316" text-anchor="middle" dominant-baseline="central" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="13" fill="#ECECF6">Conversión</text>
+
+          <rect x="40" y="294" width="170" height="44" rx="11" fill="rgba(91,75,255,0.18)" stroke="#5B4BFF" stroke-width="1.3" />
+          <text x="125" y="316" text-anchor="middle" dominant-baseline="central" font-family="Space Grotesk,sans-serif" font-weight="600" font-size="13" fill="#ECECF6">WhatsApp + cupón</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section id="que-es">
+    <div class="wrap reveal">
+      <div class="def">
+        <span class="eyebrow">En una frase</span>
+        <p class="big">Inbound es ganarte la <b class="grad-text">atención con contenido útil</b>; la automatización es poner <b class="grad-text">flujos que reaccionan solos</b> al comportamiento de cada contacto, en el canal correcto y en el momento justo.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="como-funciona">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">El flujo</span>
+        <h2>Cómo funciona</h2>
+        <p>Atraes a la persona, capturas su contacto con permiso, y dejas que un flujo automático la acompañe hasta la conversión y más allá.</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><span class="num">01</span><h3>Atraer</h3><p>Contenido, SEO, redes o un lead magnet que traen a la persona correcta.</p></div>
+        <div class="step reveal"><span class="num">02</span><h3>Capturar</h3><p>Un formulario o suscripción convierte la visita en un contacto con permiso.</p></div>
+        <div class="step reveal"><span class="num">03</span><h3>Disparador</h3><p>Defines la acción o el comportamiento que inicia el flujo automático.</p></div>
+        <div class="step reveal"><span class="num">04</span><h3>Ejecutar el flujo</h3><p>El sistema envía el mensaje correcto por email, WhatsApp, SMS o push.</p></div>
+        <div class="step reveal"><span class="num">05</span><h3>Medir y optimizar</h3><p>Mides aperturas, clics y conversiones, y afinas el flujo con los datos.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="canales">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Por dónde llegas</span>
+        <h2>Canales</h2>
+        <p>Cada canal tiene su momento. Lo potente es combinarlos en un mismo flujo según cómo reacciona la persona.</p>
+      </div>
+      <div class="models">
+        <div class="model reveal"><span class="tag">EMAIL</span><h3>El caballo de batalla</h3><p>Costo bajo y gran retorno: ideal para nutrir, newsletters y secuencias largas.</p></div>
+        <div class="model reveal"><span class="tag">WHATSAPP</span><h3>Altísima apertura</h3><p>Perfecto para mensajes oportunos y cercanos. Requiere consentimiento del contacto.</p></div>
+        <div class="model reveal"><span class="tag">SMS</span><h3>Directo e inmediato</h3><p>Para avisos urgentes, recordatorios y confirmaciones que se leen al instante.</p></div>
+        <div class="model reveal"><span class="tag">PUSH</span><h3>Reenganche</h3><p>Notificaciones web y de app para volver a traer a quien ya te conoce, sin costo por mensaje.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="plataformas">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Con qué se hace</span>
+        <h2>Plataformas</h2>
+        <p>Las herramientas que orquestan los flujos y envían por cada canal. Cada nombre lleva a su sitio oficial.</p>
+      </div>
+      <div class="plat-grid">
+
+        <div class="plat-col reveal">
+          <div class="plat-col-head"><span class="dot a"></span><h3>Email, CRM y automatización</h3></div>
+          <p class="role">El cerebro que orquesta los flujos y guarda los contactos.</p>
+          <a class="plat-item" href="https://www.hubspot.com" target="_blank" rel="noopener"><span class="plat-name">HubSpot <span class="arrow">↗</span></span><span class="plat-desc">CRM + automatización todo en uno</span></a>
+          <a class="plat-item" href="https://www.klaviyo.com" target="_blank" rel="noopener"><span class="plat-name">Klaviyo <span class="arrow">↗</span></span><span class="plat-desc">Email y SMS para ecommerce</span></a>
+          <a class="plat-item" href="https://www.activecampaign.com" target="_blank" rel="noopener"><span class="plat-name">ActiveCampaign <span class="arrow">↗</span></span><span class="plat-desc">Automatización potente y flexible</span></a>
+          <a class="plat-item" href="https://www.brevo.com" target="_blank" rel="noopener"><span class="plat-name">Brevo <span class="arrow">↗</span></span><span class="plat-desc">Email, SMS y WhatsApp (ex-Sendinblue)</span></a>
+          <a class="plat-item" href="https://www.rdstation.com" target="_blank" rel="noopener"><span class="plat-name">RD Station <span class="arrow">↗</span></span><span class="plat-desc">Fuerte en Latinoamérica</span></a>
+          <a class="plat-item" href="https://mailchimp.com" target="_blank" rel="noopener"><span class="plat-name">Mailchimp <span class="arrow">↗</span></span><span class="plat-desc">Clásico para empezar</span></a>
+        </div>
+
+        <div class="plat-col reveal">
+          <div class="plat-col-head"><span class="dot b"></span><h3>Mensajería y push</h3></div>
+          <p class="role">Los canales para llegar fuera del correo.</p>
+          <a class="plat-item" href="https://business.whatsapp.com" target="_blank" rel="noopener"><span class="plat-name">WhatsApp Business Platform <span class="arrow">↗</span></span><span class="plat-desc">La API oficial de Meta</span></a>
+          <a class="plat-item" href="https://www.twilio.com" target="_blank" rel="noopener"><span class="plat-name">Twilio <span class="arrow">↗</span></span><span class="plat-desc">SMS, WhatsApp y voz programables</span></a>
+          <a class="plat-item" href="https://www.customer.io" target="_blank" rel="noopener"><span class="plat-name">Customer.io <span class="arrow">↗</span></span><span class="plat-desc">Mensajería basada en comportamiento</span></a>
+          <a class="plat-item" href="https://onesignal.com" target="_blank" rel="noopener"><span class="plat-name">OneSignal <span class="arrow">↗</span></span><span class="plat-desc">Push web y móvil</span></a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="tecnicas">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Qué automatizar y cómo</span>
+        <h2>Técnicas</h2>
+        <p>Los flujos que más rinden, y las buenas prácticas para que la automatización sume y no espante.</p>
+      </div>
+      <div class="tech-grid">
+
+        <div class="tech-col reveal">
+          <div class="plat-col-head"><span class="dot a"></span><h3>Flujos que no pueden faltar</h3></div>
+          <ul class="tech-list">
+            <li><b>Bienvenida</b>El primer mensaje automático que presenta tu marca y marca el tono de la relación.</li>
+            <li><b>Carrito abandonado</b>Recupera ventas perdidas con un recordatorio y, si hace falta, un incentivo.</li>
+            <li><b>Post-compra</b>Confirma, agradece y prepara la recompra o la venta cruzada.</li>
+            <li><b>Lead nurturing</b>Una secuencia que educa al prospecto hasta que está listo para comprar.</li>
+            <li><b>Reactivación</b>Reengancha a los contactos dormidos antes de perderlos.</li>
+            <li><b>Fechas clave</b>Cumpleaños, aniversarios y renovaciones disparadas automáticamente.</li>
+          </ul>
+        </div>
+
+        <div class="tech-col reveal">
+          <div class="plat-col-head"><span class="dot b"></span><h3>Buenas prácticas</h3></div>
+          <ul class="tech-list">
+            <li><b>Pide permiso (opt-in)</b>Construye tu lista con consentimiento: cuida tu reputación y cumple la norma.</li>
+            <li><b>Segmenta</b>Envía lo correcto a quien corresponde; menos volumen, más relevancia.</li>
+            <li><b>Personaliza con datos</b>Usa nombre, comportamiento e historial; nada de envíos genéricos.</li>
+            <li><b>No satures</b>Cuida la frecuencia: el exceso quema la lista y dispara las bajas.</li>
+            <li><b>Mide y prueba</b>Aperturas, clics y conversiones; haz A/B y quédate con lo que funciona.</li>
+            <li><b>Limpia tu lista</b>Saca rebotes e inactivos para mantener alta la entregabilidad.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="nota" style="padding-top: 0;">
+    <div class="wrap reveal">
+      <div class="note">
+        <h3>El permiso lo es todo</h3>
+        <p>La automatización multiplica tu alcance, pero solo funciona sobre una base de contactos que aceptaron recibirte. Una lista pequeña con permiso y bien segmentada rinde más —y es más sana— que una lista grande comprada que arruina tu entregabilidad y tu reputación.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Dudas frecuentes</span>
+        <h2>Preguntas rápidas</h2>
+      </div>
+      <div class="faq reveal">
+        <details><summary>¿Inbound o outbound? <span class="sign">+</span></summary><p>Inbound atrae con contenido (la persona te encuentra); outbound interrumpe para buscarla activamente. No son excluyentes: lo común es combinarlos según la etapa del cliente.</p></details>
+        <details><summary>¿Necesito muchos contactos para empezar? <span class="sign">+</span></summary><p>No. Vale más una lista pequeña con permiso y bien segmentada que una grande comprada. La calidad de la base define la calidad de los resultados.</p></details>
+        <details><summary>¿El email sigue funcionando? <span class="sign">+</span></summary><p>Sí. Bien hecho —con permiso, segmentación y relevancia— sigue siendo de los canales con mejor retorno y el más controlable, porque la lista es tuya.</p></details>
+        <details><summary>¿Puedo hacer marketing por WhatsApp? <span class="sign">+</span></summary><p>Sí, pero a través de la API oficial (WhatsApp Business Platform) y con el consentimiento del contacto. El uso sin permiso se penaliza y arriesga el número.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section id="cta">
+    <div class="wrap reveal">
+      <div class="cta-band">
+        <span class="eyebrow">Siguiente paso</span>
+        <h2>¿Listo para <span class="grad-text">trabajar mientras duermes</span>?</h2>
+        <p>Define tus flujos clave, conéctalos a tus canales y deja que la automatización haga el seguimiento por ti.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#plataformas">Ver plataformas →</a>
+          <a class="btn btn-ghost" href="#tecnicas">Repasar técnicas</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap foot-grid">
+    <a class="brand" href="#top"><span class="brand-mark">I</span> Inbound <span class="grad-text">&amp; Automatización</span></a>
+    <p>Contenido educativo. Verifica las condiciones y normativas de envío (opt-in y anti-spam) según tu país.</p>
+  </div>
+</footer>
+
+<script>
+  var toggle = document.getElementById('navtoggle');
+  var links = document.getElementById('navlinks');
+  toggle.addEventListener('click', function () {
+    var open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') { links.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); }
+  });
+  var reveals = document.querySelectorAll('.reveal');
+  if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches && 'IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(function (el) { io.observe(el); });
+  } else { reveals.forEach(function (el) { el.classList.add('in'); }); }
+</script>
+
+</body>
+</html>
