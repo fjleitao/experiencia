@@ -1,1 +1,416 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SEO &amp; GEO</title>
+<meta name="description" content="SEO y GEO explicados: aparecer en buscadores y ser citado por la IA. Qué es, cómo funciona, pilares, herramientas y técnicas." />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="apple-touch-icon" href="/favicon-180.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #08080F; --bg-2: #0C0C18;
+    --panel: rgba(255,255,255,0.035); --panel-2: rgba(255,255,255,0.06);
+    --line: rgba(255,255,255,0.09); --line-2: rgba(255,255,255,0.16);
+    --ink: #ECECF6; --muted: #9C9AB2;
+    --violet: #5B4BFF; --violet-2: #8E82FF; --cyan: #1FD6FF; --gold: #FFB23E;
+    --grad: linear-gradient(120deg, #5B4BFF 0%, #1FD6FF 100%);
+    --grad-soft: linear-gradient(120deg, rgba(91,75,255,0.18), rgba(31,214,255,0.12));
+    --radius: 18px; --maxw: 1140px;
+    --display: "Space Grotesk", system-ui, sans-serif;
+    --body: "Hanken Grotesk", system-ui, sans-serif;
+    --mono: "Space Mono", ui-monospace, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+  body { margin: 0; font-family: var(--body); color: var(--ink); background: var(--bg); line-height: 1.62; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  body::before { content: ""; position: fixed; inset: 0; z-index: -2; background:
+      radial-gradient(700px 500px at 12% -5%, rgba(91,75,255,0.28), transparent 60%),
+      radial-gradient(600px 500px at 95% 5%, rgba(31,214,255,0.16), transparent 60%),
+      radial-gradient(800px 600px at 50% 110%, rgba(91,75,255,0.14), transparent 60%), var(--bg); }
+  body::after { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+      background-image: linear-gradient(rgba(255,255,255,0.022) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.022) 1px, transparent 1px);
+      background-size: 64px 64px; mask-image: radial-gradient(circle at 50% 30%, #000 30%, transparent 80%); }
+  a { color: inherit; }
+  h1,h2,h3 { font-family: var(--display); font-weight: 700; line-height: 1.04; margin: 0; letter-spacing: -0.02em; }
+  p { margin: 0; }
+  .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+  .eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--violet-2); display: inline-block; }
+  .grad-text { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
 
+  .site-header { position: sticky; top: 0; z-index: 60; background: rgba(8,8,15,0.72); backdrop-filter: saturate(160%) blur(14px); border-bottom: 1px solid var(--line); }
+  .nav { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+  .nav-left { display: flex; align-items: center; gap: 16px; }
+  .back-link { display: inline-flex; align-items: center; gap: 7px; font-family: var(--display); font-weight: 600; font-size: 13.5px; text-decoration: none; color: var(--ink); background: var(--panel-2); border: 1px solid var(--line-2); border-radius: 999px; padding: 8px 15px; white-space: nowrap; transition: background .18s, border-color .18s; }
+  .back-link:hover { background: rgba(255,255,255,0.12); border-color: var(--violet-2); }
+  .nav-div { width: 1px; height: 26px; background: var(--line-2); }
+  .brand { display: flex; align-items: center; gap: 11px; font-family: var(--display); font-weight: 700; font-size: 18px; letter-spacing: -0.02em; text-decoration: none; }
+  .brand-mark { width: 30px; height: 30px; border-radius: 9px; background: var(--grad); display: inline-flex; align-items: center; justify-content: center; color: #fff; font-family: var(--mono); font-size: 14px; font-weight: 700; box-shadow: 0 0 24px rgba(91,75,255,0.55); }
+  .nav-links { display: flex; gap: 22px; align-items: center; }
+  .nav-links a { text-decoration: none; font-size: 14.5px; color: var(--muted); transition: color .18s; }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-toggle { display: none; background: var(--panel); border: 1px solid var(--line-2); color: var(--ink); border-radius: 10px; padding: 9px 11px; cursor: pointer; font-size: 18px; line-height: 1; }
+
+  .btn { display: inline-flex; align-items: center; gap: 9px; font-family: var(--display); font-weight: 500; font-size: 15px; padding: 14px 26px; border-radius: 999px; text-decoration: none; border: 1px solid transparent; transition: transform .16s, box-shadow .2s, border-color .2s, background .2s; }
+  .btn-primary { background: var(--grad); color: #07070d; box-shadow: 0 10px 34px rgba(91,75,255,0.42); }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 44px rgba(91,75,255,0.55); }
+  .btn-ghost { background: var(--panel); color: var(--ink); border-color: var(--line-2); }
+  .btn-ghost:hover { transform: translateY(-2px); border-color: var(--violet-2); }
+
+  .hero { padding: 80px 0 48px; }
+  .hero-grid { display: grid; grid-template-columns: 1.08fr 0.92fr; gap: 54px; align-items: center; }
+  .hero h1 { font-size: clamp(40px, 6.6vw, 72px); text-transform: uppercase; }
+  .hero .lede { margin-top: 24px; font-size: 18px; color: var(--muted); max-width: 40ch; }
+  .cta-row { display: flex; gap: 14px; margin-top: 32px; flex-wrap: wrap; }
+
+  .diagram-card { position: relative; background: var(--panel); border: 1px solid var(--line); border-radius: 26px; padding: 24px; box-shadow: 0 30px 80px rgba(0,0,0,0.4); }
+  .diagram-card::before { content: ""; position: absolute; inset: -1px; border-radius: 27px; padding: 1px; background: var(--grad); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; opacity: 0.5; pointer-events: none; }
+  .diagram-card svg { width: 100%; height: auto; display: block; }
+  .flow { stroke-dasharray: 6 8; }
+  @media (prefers-reduced-motion: no-preference) { .flow { animation: dash 1.5s linear infinite; } }
+  @keyframes dash { to { stroke-dashoffset: -28; } }
+
+  section { padding: 64px 0; position: relative; }
+  .section-head { max-width: 60ch; margin-bottom: 42px; }
+  .section-head h2 { font-size: clamp(30px, 4.4vw, 46px); margin-top: 14px; text-transform: uppercase; }
+  .section-head p { margin-top: 16px; color: var(--muted); font-size: 17px; max-width: 56ch; }
+
+  .def { position: relative; border-radius: 24px; padding: 52px; border: 1px solid var(--line); background: var(--grad-soft); overflow: hidden; }
+  .def .big { font-family: var(--display); font-weight: 600; font-size: clamp(23px, 3.6vw, 34px); line-height: 1.22; letter-spacing: -0.02em; margin-top: 18px; }
+  .def .big b { font-weight: 700; }
+
+  .steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+  .step { position: relative; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px 20px; transition: transform .2s, border-color .2s, background .2s; }
+  .step:hover { transform: translateY(-4px); border-color: var(--violet); background: var(--panel-2); }
+  .step .num { font-family: var(--mono); font-weight: 700; font-size: 14px; color: #fff; background: var(--grad); width: 38px; height: 38px; border-radius: 11px; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 0 22px rgba(91,75,255,0.5); }
+  .step h3 { font-size: 17px; margin: 18px 0 8px; }
+  .step p { font-size: 14px; color: var(--muted); }
+
+  .models { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 18px; }
+  .model { border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; background: var(--panel); transition: transform .2s, border-color .2s; }
+  .model:hover { transform: translateY(-4px); border-color: var(--cyan); }
+  .model .tag { font-family: var(--mono); font-weight: 700; font-size: 13px; letter-spacing: 0.06em; color: var(--cyan); }
+  .model h3 { font-size: 18px; margin: 10px 0 10px; }
+  .model p { font-size: 14.5px; color: var(--muted); }
+
+  .plat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  .plat-col { position: relative; background: var(--panel); border: 1px solid var(--line); border-radius: 22px; padding: 30px; }
+  .plat-col-head { display: flex; align-items: center; gap: 11px; }
+  .dot { width: 12px; height: 12px; border-radius: 50%; flex: none; }
+  .dot.seo { background: var(--cyan); box-shadow: 0 0 14px var(--cyan); }
+  .dot.geo { background: var(--violet); box-shadow: 0 0 14px var(--violet); }
+  .plat-col h3 { font-size: 20px; text-transform: uppercase; }
+  .plat-col .role { font-size: 14px; color: var(--muted); margin: 8px 0 18px; }
+  .plat-item { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; padding: 14px 0; border-top: 1px solid var(--line); text-decoration: none; transition: padding-left .18s, border-color .18s; }
+  .plat-item:hover { padding-left: 8px; border-color: var(--violet-2); }
+  .plat-name { font-family: var(--display); font-weight: 500; font-size: 15.5px; display: inline-flex; align-items: center; gap: 7px; white-space: nowrap; }
+  .plat-name .arrow { font-family: var(--mono); font-size: 13px; color: var(--violet-2); transition: transform .18s; }
+  .plat-item:hover .plat-name .arrow { transform: translate(2px,-2px); }
+  .plat-desc { font-size: 13px; color: var(--muted); text-align: right; }
+
+  .tech-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  .tech-col { background: var(--panel); border: 1px solid var(--line); border-radius: 22px; padding: 30px; }
+  .tech-col .plat-col-head { display: flex; align-items: center; gap: 11px; }
+  .tech-col h3 { font-size: 21px; text-transform: uppercase; }
+  .tech-list { list-style: none; margin: 20px 0 0; padding: 0; }
+  .tech-list li { padding: 16px 0; border-top: 1px solid var(--line); font-size: 14.5px; color: var(--muted); }
+  .tech-list li b { display: block; color: var(--ink); font-weight: 600; margin-bottom: 4px; font-size: 15.5px; font-family: var(--display); letter-spacing: -0.01em; }
+
+  .note { border: 1px dashed var(--cyan); border-radius: var(--radius); padding: 28px; background: rgba(31,214,255,0.06); }
+  .note h3 { font-size: 19px; color: var(--cyan); }
+  .note p { color: #Bfe9F5; font-size: 15px; margin-top: 10px; }
+
+  .faq details { border-bottom: 1px solid var(--line); }
+  .faq summary { cursor: pointer; list-style: none; padding: 22px 0; font-family: var(--display); font-weight: 500; font-size: 18px; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary .sign { color: var(--violet-2); font-weight: 700; font-size: 22px; transition: transform .2s; }
+  .faq details[open] summary .sign { transform: rotate(45deg); }
+  .faq details p { color: var(--muted); padding: 0 0 22px; font-size: 15px; max-width: 72ch; }
+
+  .cta-band { position: relative; border-radius: 28px; padding: 60px 40px; text-align: center; border: 1px solid var(--line); background: var(--grad-soft); overflow: hidden; }
+  .cta-band h2 { font-size: clamp(30px, 5vw, 52px); text-transform: uppercase; }
+  .cta-band p { color: var(--muted); margin: 16px auto 0; max-width: 48ch; font-size: 17px; }
+  .cta-band .cta-row { justify-content: center; }
+
+  .site-footer { border-top: 1px solid var(--line); padding: 48px 0 60px; }
+  .foot-grid { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; align-items: center; }
+  .site-footer .brand { font-size: 16px; }
+  .site-footer p { font-size: 14px; color: var(--muted); max-width: 50ch; }
+
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  :focus-visible { outline: 3px solid var(--violet-2); outline-offset: 3px; border-radius: 6px; }
+
+  @media (max-width: 920px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+    .hero .lede { max-width: none; }
+    .steps { grid-template-columns: 1fr 1fr; }
+    .plat-grid, .tech-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .nav-links.open { display: flex; position: absolute; top: 68px; left: 0; right: 0; flex-direction: column; gap: 0; background: var(--bg-2); border-bottom: 1px solid var(--line); padding: 8px 24px 18px; }
+    .nav-links.open a { padding: 13px 0; border-bottom: 1px solid var(--line); }
+    .nav-toggle { display: inline-flex; }
+  }
+  @media (max-width: 540px) {
+    .steps { grid-template-columns: 1fr; }
+    .hero { padding: 52px 0 24px; }
+    .def, .cta-band { padding: 32px 24px; }
+    .brand-text { display: none; }
+    .nav-div { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <div class="nav-left">
+      <a class="back-link" href="/">← Experiencia</a>
+      <span class="nav-div"></span>
+      <a class="brand" href="#top"><span class="brand-mark">S</span> <span class="brand-text">SEO <span class="grad-text">&amp; GEO</span></span></a>
+    </div>
+    <nav class="nav-links" id="navlinks">
+      <a href="#que-es">Qué es</a>
+      <a href="#como-funciona">Cómo funciona</a>
+      <a href="#pilares">Pilares</a>
+      <a href="#plataformas">Herramientas</a>
+      <a href="#tecnicas">Técnicas</a>
+      <a href="#faq">Preguntas</a>
+    </nav>
+    <button class="nav-toggle" id="navtoggle" aria-label="Abrir menú" aria-expanded="false">≡</button>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="reveal">
+        <span class="eyebrow">Visibilidad orgánica · 2026</span>
+        <h1>Que te encuentren <span class="grad-text">en Google y en la IA</span>.</h1>
+        <p class="lede">Aparecer en los buscadores (SEO) y también ser citado en las respuestas de la IA —ChatGPT, Gemini, Perplexity, AI Overviews— sin pagar por cada clic. Tráfico que se gana, no que se alquila.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#como-funciona">Ver cómo funciona →</a>
+          <a class="btn btn-ghost" href="#plataformas">Ver herramientas</a>
+        </div>
+      </div>
+
+      <div class="diagram-card reveal">
+        <svg viewBox="0 0 460 360" role="img" aria-labelledby="dt dd" xmlns="http://www.w3.org/2000/svg">
+          <title id="dt">SEO y GEO</title>
+          <desc id="dd">Tu contenido y autoridad alimentan dos caminos: los buscadores (SEO), que dan resultados orgánicos, y los motores de IA (GEO), que te citan en sus respuestas.</desc>
+          <defs>
+            <linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#5B4BFF" /><stop offset="100%" stop-color="#1FD6FF" /></linearGradient>
+            <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" /></marker>
+          </defs>
+
+          <g>
+            <rect x="22" y="146" width="154" height="66" rx="13" fill="rgba(255,255,255,0.05)" stroke="#8E82FF" stroke-width="1.3" />
+            <text x="99" y="172" text-anchor="middle" dominant-baseline="central" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="14" fill="#ECECF6">Tu contenido</text>
+            <text x="99" y="190" text-anchor="middle" dominant-baseline="central" font-family="Hanken Grotesk,sans-serif" font-size="11.5" fill="#9C9AB2">+ autoridad</text>
+          </g>
+
+          <g>
+            <rect x="268" y="52" width="168" height="66" rx="13" fill="rgba(31,214,255,0.10)" stroke="#1FD6FF" stroke-width="1.3" />
+            <text x="352" y="78" text-anchor="middle" dominant-baseline="central" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="14" fill="#ECECF6">Buscadores</text>
+            <text x="352" y="96" text-anchor="middle" dominant-baseline="central" font-family="Hanken Grotesk,sans-serif" font-size="11.5" fill="#9C9AB2">resultado orgánico</text>
+          </g>
+
+          <g>
+            <rect x="268" y="240" width="168" height="66" rx="13" fill="rgba(91,75,255,0.14)" stroke="#5B4BFF" stroke-width="1.3" />
+            <text x="352" y="266" text-anchor="middle" dominant-baseline="central" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="14" fill="#ECECF6">Motores de IA</text>
+            <text x="352" y="284" text-anchor="middle" dominant-baseline="central" font-family="Hanken Grotesk,sans-serif" font-size="11.5" fill="#9C9AB2">te citan en la respuesta</text>
+          </g>
+
+          <line class="flow" x1="176" y1="166" x2="264" y2="92" stroke="url(#gg)" stroke-width="2" marker-end="url(#ah)" />
+          <line class="flow" x1="176" y1="194" x2="264" y2="270" stroke="url(#gg)" stroke-width="2" marker-end="url(#ah)" />
+          <text x="214" y="116" text-anchor="middle" font-family="Space Mono,monospace" font-size="12" font-weight="700" fill="#1FD6FF">SEO</text>
+          <text x="214" y="248" text-anchor="middle" font-family="Space Mono,monospace" font-size="12" font-weight="700" fill="#8E82FF">GEO</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section id="que-es">
+    <div class="wrap reveal">
+      <div class="def">
+        <span class="eyebrow">En una frase</span>
+        <p class="big">SEO es <b class="grad-text">rankear</b> en los buscadores; GEO es ser <b class="grad-text">citado</b> por los motores de IA. No compiten: un buen SEO es la base que la IA usa para elegir a quién citar.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="como-funciona">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">El proceso</span>
+        <h2>Cómo funciona</h2>
+        <p>Tanto Google como los motores de IA premian lo mismo: contenido útil, claro y confiable que un sitio bien construido pueda entregar.</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><span class="num">01</span><h3>Intención y keywords</h3><p>Entiendes qué busca tu audiencia y qué le pregunta a la IA sobre tu tema.</p></div>
+        <div class="step reveal"><span class="num">02</span><h3>Contenido que responde</h3><p>Creas contenido claro, específico y verificable que resuelve esa intención.</p></div>
+        <div class="step reveal"><span class="num">03</span><h3>Base técnica</h3><p>Te aseguras de que buscadores e IA puedan rastrear, entender e indexar tu sitio.</p></div>
+        <div class="step reveal"><span class="num">04</span><h3>Autoridad</h3><p>Ganas enlaces y menciones que te posicionan como fuente confiable.</p></div>
+        <div class="step reveal"><span class="num">05</span><h3>Mide y mejora</h3><p>Sigues rankings, tráfico y si la IA te cita; ajustas lo que haga falta.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pilares">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Las cuatro patas</span>
+        <h2>Pilares</h2>
+        <p>El SEO se sostiene en tres pilares clásicos, y GEO suma una cuarta capa para la era de la IA.</p>
+      </div>
+      <div class="models">
+        <div class="model reveal"><span class="tag">ON-PAGE</span><h3>En la página</h3><p>Contenido, títulos, estructura y palabras clave bien trabajados dentro de cada página.</p></div>
+        <div class="model reveal"><span class="tag">TÉCNICO</span><h3>Base técnica</h3><p>Velocidad, indexación, datos estructurados (schema) y buena experiencia móvil.</p></div>
+        <div class="model reveal"><span class="tag">AUTORIDAD</span><h3>Off-page</h3><p>Enlaces y menciones de calidad que generan confianza y reputación.</p></div>
+        <div class="model reveal"><span class="tag">GEO</span><h3>Capa de IA</h3><p>Señales para que los motores generativos te entiendan, citen y recomienden.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="plataformas">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Con qué trabajar</span>
+        <h2>Herramientas y motores</h2>
+        <p>Las herramientas para medir y mejorar tu SEO, y los motores de IA donde quieres aparecer citado. Cada nombre lleva a su sitio oficial.</p>
+      </div>
+      <div class="plat-grid">
+
+        <div class="plat-col reveal">
+          <div class="plat-col-head"><span class="dot seo"></span><h3>Herramientas SEO</h3></div>
+          <p class="role">Para medir, auditar y mejorar tu posicionamiento.</p>
+          <a class="plat-item" href="https://search.google.com/search-console" target="_blank" rel="noopener"><span class="plat-name">Google Search Console <span class="arrow">↗</span></span><span class="plat-desc">Rendimiento e indexación · gratis</span></a>
+          <a class="plat-item" href="https://www.bing.com/webmasters" target="_blank" rel="noopener"><span class="plat-name">Bing Webmaster Tools <span class="arrow">↗</span></span><span class="plat-desc">Lo mismo, para Bing · gratis</span></a>
+          <a class="plat-item" href="https://www.semrush.com" target="_blank" rel="noopener"><span class="plat-name">Semrush <span class="arrow">↗</span></span><span class="plat-desc">Keywords, competencia y auditorías</span></a>
+          <a class="plat-item" href="https://ahrefs.com" target="_blank" rel="noopener"><span class="plat-name">Ahrefs <span class="arrow">↗</span></span><span class="plat-desc">Backlinks y autoridad</span></a>
+          <a class="plat-item" href="https://www.screamingfrog.co.uk/seo-spider/" target="_blank" rel="noopener"><span class="plat-name">Screaming Frog <span class="arrow">↗</span></span><span class="plat-desc">Auditoría técnica del sitio</span></a>
+        </div>
+
+        <div class="plat-col reveal">
+          <div class="plat-col-head"><span class="dot geo"></span><h3>Motores de IA (GEO)</h3></div>
+          <p class="role">Los motores donde quieres que te citen.</p>
+          <a class="plat-item" href="https://chatgpt.com" target="_blank" rel="noopener"><span class="plat-name">ChatGPT <span class="arrow">↗</span></span><span class="plat-desc">El asistente de IA más usado</span></a>
+          <a class="plat-item" href="https://gemini.google.com" target="_blank" rel="noopener"><span class="plat-name">Gemini · AI Overviews <span class="arrow">↗</span></span><span class="plat-desc">Respuestas con IA en Google</span></a>
+          <a class="plat-item" href="https://www.perplexity.ai" target="_blank" rel="noopener"><span class="plat-name">Perplexity <span class="arrow">↗</span></span><span class="plat-desc">Buscador conversacional con fuentes</span></a>
+          <a class="plat-item" href="https://copilot.microsoft.com" target="_blank" rel="noopener"><span class="plat-name">Microsoft Copilot <span class="arrow">↗</span></span><span class="plat-desc">La IA de Microsoft y Bing</span></a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="tecnicas">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Cómo ganar visibilidad</span>
+        <h2>Técnicas</h2>
+        <p>Lo que mueve la aguja en buscadores, y lo que aumenta la probabilidad de que la IA te use como fuente.</p>
+      </div>
+      <div class="tech-grid">
+
+        <div class="tech-col reveal">
+          <div class="plat-col-head"><span class="dot seo"></span><h3>Para rankear en buscadores</h3></div>
+          <ul class="tech-list">
+            <li><b>Responde la intención real</b>Cubre lo que la persona quiere resolver, no solo la palabra clave exacta.</li>
+            <li><b>Estructura clara</b>Títulos, encabezados y párrafos cortos que se leen y se rastrean con facilidad.</li>
+            <li><b>Datos estructurados</b>Marca tu contenido con schema (JSON-LD) para que lo entiendan mejor.</li>
+            <li><b>Velocidad y móvil</b>Un sitio rápido y bien hecho en celular posiciona mejor.</li>
+            <li><b>Enlaces y menciones</b>Construye autoridad con backlinks de calidad y presencia de marca.</li>
+            <li><b>Contenido vivo</b>Actualiza y mejora lo que ya tienes; el contenido fresco rinde más.</li>
+          </ul>
+        </div>
+
+        <div class="tech-col reveal">
+          <div class="plat-col-head"><span class="dot geo"></span><h3>Para que la IA te cite</h3></div>
+          <ul class="tech-list">
+            <li><b>Responde en las primeras líneas</b>Da la respuesta clara en el primer párrafo: la IA sintetiza eso.</li>
+            <li><b>Sé específico y verificable</b>Datos, cifras y fuentes claras; la IA prefiere lo comprobable.</li>
+            <li><b>Autoridad y consistencia</b>Que tu marca diga lo mismo en todas partes refuerza que te citen.</li>
+            <li><b>Buen SEO de base</b>Sin fundamentos SEO sólidos no hay GEO que aguante.</li>
+            <li><b>Audita con prompts</b>Pregúntale a ChatGPT o Gemini por tu rubro y mira si apareces.</li>
+            <li><b>Mide las menciones</b>Revisa el tráfico desde motores de IA y cómo te describen.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="nota" style="padding-top: 0;">
+    <div class="wrap reveal">
+      <div class="note">
+        <h3>SEO y GEO van juntos, no separados</h3>
+        <p>No es elegir uno u otro. Los buscadores usan el ranking orgánico para decidir a quién citar en sus respuestas con IA, así que un SEO sólido es justamente lo que hace posible el GEO. Y no hace falta crear contenido "especial para máquinas": el contenido bien escrito para personas ya está en el formato correcto.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Dudas frecuentes</span>
+        <h2>Preguntas rápidas</h2>
+      </div>
+      <div class="faq reveal">
+        <details><summary>¿GEO reemplaza al SEO? <span class="sign">+</span></summary><p>No. Son complementarios. El SEO sigue siendo el motor: la base de contenido y autoridad que los motores de IA usan para decidir a quién citar. GEO es la puesta a punto para esa nueva capa.</p></details>
+        <details><summary>¿En cuánto tiempo se ven resultados? <span class="sign">+</span></summary><p>El SEO es de mediano a largo plazo: suele tomar semanas o meses y es una inversión acumulativa, a diferencia de la publicidad pagada que es inmediata pero se apaga cuando dejas de pagar.</p></details>
+        <details><summary>¿Necesito contenido especial "para la IA"? <span class="sign">+</span></summary><p>No. Un contenido claro, específico y verificable escrito para personas ya sirve para que la IA lo entienda y lo use. Crear versiones paralelas "para máquinas" no mejora tus probabilidades.</p></details>
+        <details><summary>¿Cómo sé si la IA me está citando? <span class="sign">+</span></summary><p>Pregúntale directamente a ChatGPT, Gemini o Perplexity por tu rubro o servicio y revisa si apareces. Y en tu analítica puedes identificar el tráfico que llega desde esos motores.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section id="cta">
+    <div class="wrap reveal">
+      <div class="cta-band">
+        <span class="eyebrow">Siguiente paso</span>
+        <h2>¿Listo para <span class="grad-text">ganar visibilidad</span>?</h2>
+        <p>Construye contenido y autoridad de verdad: eso es lo que te hace rankear en Google y aparecer en las respuestas de la IA.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#plataformas">Ver herramientas →</a>
+          <a class="btn btn-ghost" href="#tecnicas">Repasar técnicas</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap foot-grid">
+    <a class="brand" href="#top"><span class="brand-mark">S</span> SEO <span class="grad-text">&amp; GEO</span></a>
+    <p>Contenido educativo. Las prácticas de SEO y GEO evolucionan; verifica las guías oficiales de cada buscador y motor.</p>
+  </div>
+</footer>
+
+<script>
+  var toggle = document.getElementById('navtoggle');
+  var links = document.getElementById('navlinks');
+  toggle.addEventListener('click', function () {
+    var open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') { links.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); }
+  });
+  var reveals = document.querySelectorAll('.reveal');
+  if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches && 'IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(function (el) { io.observe(el); });
+  } else { reveals.forEach(function (el) { el.classList.add('in'); }); }
+</script>
+
+</body>
+</html>
