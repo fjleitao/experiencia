@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Programas de Referidos</title>
+<meta name="description" content="Programas de referidos: convierte a tus clientes en tu canal de crecimiento. Qué es, cómo funciona, tipos de recompensa, plataformas y técnicas." />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="apple-touch-icon" href="/favicon-180.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #08080F; --bg-2: #0C0C18;
+    --panel: rgba(255,255,255,0.035); --panel-2: rgba(255,255,255,0.06);
+    --line: rgba(255,255,255,0.09); --line-2: rgba(255,255,255,0.16);
+    --ink: #ECECF6; --muted: #9C9AB2;
+    --violet: #5B4BFF; --violet-2: #8E82FF; --cyan: #1FD6FF; --gold: #FFB23E;
+    --grad: linear-gradient(120deg, #5B4BFF 0%, #1FD6FF 100%);
+    --grad-soft: linear-gradient(120deg, rgba(91,75,255,0.18), rgba(31,214,255,0.12));
+    --radius: 18px; --maxw: 1140px;
+    --display: "Space Grotesk", system-ui, sans-serif;
+    --body: "Hanken Grotesk", system-ui, sans-serif;
+    --mono: "Space Mono", ui-monospace, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+  body { margin: 0; font-family: var(--body); color: var(--ink); background: var(--bg); line-height: 1.62; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  body::before { content: ""; position: fixed; inset: 0; z-index: -2; background:
+      radial-gradient(700px 500px at 12% -5%, rgba(91,75,255,0.28), transparent 60%),
+      radial-gradient(600px 500px at 95% 5%, rgba(31,214,255,0.16), transparent 60%),
+      radial-gradient(800px 600px at 50% 110%, rgba(91,75,255,0.14), transparent 60%), var(--bg); }
+  body::after { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+      background-image: linear-gradient(rgba(255,255,255,0.022) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.022) 1px, transparent 1px);
+      background-size: 64px 64px; mask-image: radial-gradient(circle at 50% 30%, #000 30%, transparent 80%); }
+  a { color: inherit; }
+  h1,h2,h3 { font-family: var(--display); font-weight: 700; line-height: 1.04; margin: 0; letter-spacing: -0.02em; }
+  p { margin: 0; }
+  .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+  .eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--violet-2); display: inline-block; }
+  .grad-text { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+  .site-header { position: sticky; top: 0; z-index: 60; background: rgba(8,8,15,0.72); backdrop-filter: saturate(160%) blur(14px); border-bottom: 1px solid var(--line); }
+  .nav { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+  .nav-left { display: flex; align-items: center; gap: 16px; }
+  .back-link { display: inline-flex; align-items: center; gap: 7px; font-family: var(--display); font-weight: 600; font-size: 13.5px; text-decoration: none; color: var(--ink); background: var(--panel-2); border: 1px solid var(--line-2); border-radius: 999px; padding: 8px 15px; white-space: nowrap; transition: background .18s, border-color .18s; }
+  .back-link:hover { background: rgba(255,255,255,0.12); border-color: var(--violet-2); }
+  .nav-div { width: 1px; height: 26px; background: var(--line-2); }
+  .brand { display: flex; align-items: center; gap: 11px; font-family: var(--display); font-weight: 700; font-size: 18px; letter-spacing: -0.02em; text-decoration: none; }
+  .brand-mark { width: 30px; height: 30px; border-radius: 9px; background: var(--grad); display: inline-flex; align-items: center; justify-content: center; color: #fff; font-family: var(--mono); font-size: 14px; font-weight: 700; box-shadow: 0 0 24px rgba(91,75,255,0.55); }
+  .nav-links { display: flex; gap: 22px; align-items: center; }
+  .nav-links a { text-decoration: none; font-size: 14.5px; color: var(--muted); transition: color .18s; }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-toggle { display: none; background: var(--panel); border: 1px solid var(--line-2); color: var(--ink); border-radius: 10px; padding: 9px 11px; cursor: pointer; font-size: 18px; line-height: 1; }
+
+  .btn { display: inline-flex; align-items: center; gap: 9px; font-family: var(--display); font-weight: 500; font-size: 15px; padding: 14px 26px; border-radius: 999px; text-decoration: none; border: 1px solid transparent; transition: transform .16s, box-shadow .2s, border-color .2s, background .2s; }
+  .btn-primary { background: var(--grad); color: #07070d; box-shadow: 0 10px 34px rgba(91,75,255,0.42); }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 44px rgba(91,75,255,0.55); }
+  .btn-ghost { background: var(--panel); color: var(--ink); border-color: var(--line-2); }
+  .btn-ghost:hover { transform: translateY(-2px); border-color: var(--violet-2); }
+
+  .hero { padding: 80px 0 48px; }
+  .hero-grid { display: grid; grid-template-columns: 1.08fr 0.92fr; gap: 54px; align-items: center; }
+  .hero h1 { font-size: clamp(38px, 6vw, 66px); text-transform: uppercase; }
+  .hero .lede { margin-top: 24px; font-size: 18px; color: var(--muted); max-width: 40ch; }
+  .cta-row { display: flex; gap: 14px; margin-top: 32px; flex-wrap: wrap; }
+
+  .diagram-card { position: relative; background: var(--panel); border: 1px solid var(--line); border-radius: 26px; padding: 24px; box-shadow: 0 30px 80px rgba(0,0,0,0.4); }
+  .diagram-card::before { content: ""; position: absolute; inset: -1px; border-radius: 27px; padding: 1px; background: var(--grad); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; opacity: 0.5; pointer-events: none; }
+  .diagram-card svg { width: 100%; height: auto; display: block; }
+  .flow { stroke-dasharray: 6 8; }
+  @media (prefers-reduced-motion: no-preference) { .flow { animation: dash 1.5s linear infinite; } }
+  @keyframes dash { to { stroke-dashoffset: -28; } }
+
+  section { padding: 64px 0; position: relative; }
+  .section-head { max-width: 60ch; margin-bottom: 42px; }
+  .section-head h2 { font-size: clamp(30px, 4.4vw, 46px); margin-top: 14px; text-transform: uppercase; }
+  .section-head p { margin-top: 16px; color: var(--muted); font-size: 17px; max-width: 56ch; }
+
+  .def { position: relative; border-radius: 24px; padding: 52px; border: 1px solid var(--line); background: var(--grad-soft); overflow: hidden; }
+  .def .big { font-family: var(--display); font-weight: 600; font-size: clamp(23px, 3.6vw, 34px); line-height: 1.22; letter-spacing: -0.02em; margin-top: 18px; }
+  .def .big b { font-weight: 700; }
+
+  .steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+  .step { position: relative; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px 20px; transition: transform .2s, border-color .2s, background .2s; }
+  .step:hover { transform: translateY(-4px); border-color: var(--violet); background: var(--panel-2); }
+  .step .num { font-family: var(--mono); font-weight: 700; font-size: 14px; color: #fff; background: var(--grad); width: 38px; height: 38px; border-radius: 11px; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 0 22px rgba(91,75,255,0.5); }
+  .step h3 { font-size: 16px; margin: 18px 0 8px; }
+  .step p { font-size: 14px; color: var(--muted); }
+
+  .models { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 18px; }
+  .model { border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; background: var(--panel); transition: transform .2s, border-color .2s; }
+  .model:hover { transform: translateY(-4px); border-color: var(--cyan); }
+  .model .tag { font-family: var(--mono); font-weight: 700; font-size: 13px; letter-spacing: 0.06em; color: var(--cyan); }
+  .model h3 { font-size: 18px; margin: 10px 0 10px; }
+  .model p { font-size: 14.5px; color: var(--muted); }
+
+  .plat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  .plat-col { position: relative; background: var(--panel); border: 1px solid var(--line); border-radius: 22px; padding: 30px; }
+  .plat-col-head { display: flex; align-items: center; gap: 11px; }
+  .dot { width: 12px; height: 12px; border-radius: 50%; flex: none; }
+  .dot.a { background: var(--cyan); box-shadow: 0 0 14px var(--cyan); }
+  .dot.b { background: var(--violet); box-shadow: 0 0 14px var(--violet); }
+  .plat-col h3 { font-size: 20px; text-transform: uppercase; }
+  .plat-col .role { font-size: 14px; color: var(--muted); margin: 8px 0 18px; }
+  .plat-item { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; padding: 14px 0; border-top: 1px solid var(--line); text-decoration: none; transition: padding-left .18s, border-color .18s; }
+  .plat-item:hover { padding-left: 8px; border-color: var(--violet-2); }
+  .plat-name { font-family: var(--display); font-weight: 500; font-size: 15.5px; display: inline-flex; align-items: center; gap: 7px; white-space: nowrap; }
+  .plat-name .arrow { font-family: var(--mono); font-size: 13px; color: var(--violet-2); transition: transform .18s; }
+  .plat-item:hover .plat-name .arrow { transform: translate(2px,-2px); }
+  .plat-desc { font-size: 13px; color: var(--muted); text-align: right; }
+
+  .tech-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  .tech-col { background: var(--panel); border: 1px solid var(--line); border-radius: 22px; padding: 30px; }
+  .tech-col .plat-col-head { display: flex; align-items: center; gap: 11px; }
+  .tech-col h3 { font-size: 21px; text-transform: uppercase; }
+  .tech-list { list-style: none; margin: 20px 0 0; padding: 0; }
+  .tech-list li { padding: 16px 0; border-top: 1px solid var(--line); font-size: 14.5px; color: var(--muted); }
+  .tech-list li b { display: block; color: var(--ink); font-weight: 600; margin-bottom: 4px; font-size: 15.5px; font-family: var(--display); letter-spacing: -0.01em; }
+
+  .note { border: 1px dashed var(--cyan); border-radius: var(--radius); padding: 28px; background: rgba(31,214,255,0.06); }
+  .note h3 { font-size: 19px; color: var(--cyan); }
+  .note p { color: #Bfe9F5; font-size: 15px; margin-top: 10px; }
+
+  .faq details { border-bottom: 1px solid var(--line); }
+  .faq summary { cursor: pointer; list-style: none; padding: 22px 0; font-family: var(--display); font-weight: 500; font-size: 18px; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary .sign { color: var(--violet-2); font-weight: 700; font-size: 22px; transition: transform .2s; }
+  .faq details[open] summary .sign { transform: rotate(45deg); }
+  .faq details p { color: var(--muted); padding: 0 0 22px; font-size: 15px; max-width: 72ch; }
+
+  .cta-band { position: relative; border-radius: 28px; padding: 60px 40px; text-align: center; border: 1px solid var(--line); background: var(--grad-soft); overflow: hidden; }
+  .cta-band h2 { font-size: clamp(30px, 5vw, 52px); text-transform: uppercase; }
+  .cta-band p { color: var(--muted); margin: 16px auto 0; max-width: 48ch; font-size: 17px; }
+  .cta-band .cta-row { justify-content: center; }
+
+  .site-footer { border-top: 1px solid var(--line); padding: 48px 0 60px; }
+  .foot-grid { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; align-items: center; }
+  .site-footer .brand { font-size: 16px; }
+  .site-footer p { font-size: 14px; color: var(--muted); max-width: 50ch; }
+
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  :focus-visible { outline: 3px solid var(--violet-2); outline-offset: 3px; border-radius: 6px; }
+
+  @media (max-width: 920px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+    .hero .lede { max-width: none; }
+    .steps { grid-template-columns: 1fr 1fr; }
+    .plat-grid, .tech-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .nav-links.open { display: flex; position: absolute; top: 68px; left: 0; right: 0; flex-direction: column; gap: 0; background: var(--bg-2); border-bottom: 1px solid var(--line); padding: 8px 24px 18px; }
+    .nav-links.open a { padding: 13px 0; border-bottom: 1px solid var(--line); }
+    .nav-toggle { display: inline-flex; }
+  }
+  @media (max-width: 540px) {
+    .steps { grid-template-columns: 1fr; }
+    .hero { padding: 52px 0 24px; }
+    .def, .cta-band { padding: 32px 24px; }
+    .brand-text { display: none; }
+    .nav-div { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <div class="nav-left">
+      <a class="back-link" href="/">← Experiencia</a>
+      <span class="nav-div"></span>
+      <a class="brand" href="#top"><span class="brand-mark">R</span> <span class="brand-text"><span class="grad-text">Referidos</span></span></a>
+    </div>
+    <nav class="nav-links" id="navlinks">
+      <a href="#que-es">Qué es</a>
+      <a href="#como-funciona">Cómo funciona</a>
+      <a href="#tipos">Tipos</a>
+      <a href="#plataformas">Plataformas</a>
+      <a href="#tecnicas">Técnicas</a>
+      <a href="#faq">Preguntas</a>
+    </nav>
+    <button class="nav-toggle" id="navtoggle" aria-label="Abrir menú" aria-expanded="false">≡</button>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="reveal">
+        <span class="eyebrow">Crecimiento por recomendación · 2026</span>
+        <h1>Tus clientes, tu mejor <span class="grad-text">canal de crecimiento</span>.</h1>
+        <p class="lede">Un programa de referidos convierte a tus clientes felices en quienes te traen nuevos clientes, premiando a ambas partes. El boca a boca de siempre, ahora medible y automatizado.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#como-funciona">Ver cómo funciona →</a>
+          <a class="btn btn-ghost" href="#plataformas">Ver plataformas</a>
+        </div>
+      </div>
+
+      <div class="diagram-card reveal">
+        <svg viewBox="0 0 460 360" role="img" aria-labelledby="dt dd" xmlns="http://www.w3.org/2000/svg">
+          <title id="dt">El loop de los referidos</title>
+          <desc id="dd">Un cliente feliz comparte su enlace, un amigo compra, ambos ganan una recompensa y el ciclo vuelve a empezar.</desc>
+          <defs>
+            <linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#5B4BFF" /><stop offset="100%" stop-color="#1FD6FF" /></linearGradient>
+            <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" /></marker>
+          </defs>
+
+          <text x="230" y="180" text-anchor="middle" dominant-baseline="central" font-family="Space Mono,monospace" font-size="12" letter-spacing="2" fill="#5b5a72">LOOP</text>
+
+          <path class="flow" d="M298 62 Q368 74 368 152" fill="none" stroke="url(#gg)" stroke-width="2" marker-end="url(#ah)" />
+          <path class="flow" d="M368 208 Q368 300 298 300" fill="none" stroke="url(#gg)" stroke-width="2" marker-end="url(#ah)" />
+          <path class="flow" d="M162 300 Q92 300 92 208" fill="none" stroke="url(#gg)" stroke-width="2" marker-end="url(#ah)" />
+          <path class="flow" d="M92 152 Q92 60 162 60" fill="none" stroke="url(#gg)" stroke-width="2" marker-end="url(#ah)" />
+
+          <rect x="160" y="22" width="140" height="50" rx="12" fill="rgba(91,75,255,0.16)" stroke="#5B4BFF" stroke-width="1.2" />
+          <text x="230" y="47" text-anchor="middle" dominant-baseline="central" font-family="Space Grotesk,sans-serif" font-weight="600" font-size="13.5" fill="#ECECF6">Cliente feliz</text>
+
+          <rect x="300" y="154" width="140" height="52" rx="12" fill="rgba(31,214,255,0.14)" stroke="#1FD6FF" stroke-width="1.2" />
+          <text x="370" y="180" text-anchor="middle" dominant-baseline="central" font-family="Space Grotesk,sans-serif" font-weight="600" font-size="13.5" fill="#ECECF6">Comparte enlace</text>
+
+          <rect x="160" y="288" width="140" height="50" rx="12" fill="rgba(91,75,255,0.16)" stroke="#5B4BFF" stroke-width="1.2" />
+          <text x="230" y="313" text-anchor="middle" dominant-baseline="central" font-family="Space Grotesk,sans-serif" font-weight="600" font-size="13.5" fill="#ECECF6">Amigo compra</text>
+
+          <rect x="20" y="154" width="140" height="52" rx="12" fill="rgba(255,178,62,0.16)" stroke="#FFB23E" stroke-width="1.2" />
+          <text x="90" y="180" text-anchor="middle" dominant-baseline="central" font-family="Space Grotesk,sans-serif" font-weight="700" font-size="13.5" fill="#FFD79B">Ambos ganan</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section id="que-es">
+    <div class="wrap reveal">
+      <div class="def">
+        <span class="eyebrow">En una frase</span>
+        <p class="big">Referidos es darle a tus clientes un <b class="grad-text">motivo y una forma fácil de recomendarte</b>: comparten un enlace, su amigo compra y <b class="grad-text">ambos ganan</b>. Boca a boca con incentivo, rastreable de punta a punta.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="como-funciona">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">El ciclo</span>
+        <h2>Cómo funciona</h2>
+        <p>Todo parte de un cliente contento. El programa solo le pone una forma fácil de recomendarte y un premio por hacerlo.</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><span class="num">01</span><h3>Cliente satisfecho</h3><p>Sin una buena experiencia previa no hay recomendación que valga.</p></div>
+        <div class="step reveal"><span class="num">02</span><h3>Le das su enlace</h3><p>Recibe un enlace o código único para compartir y rastrear.</p></div>
+        <div class="step reveal"><span class="num">03</span><h3>Comparte</h3><p>Lo envía a alguien que confía en su recomendación.</p></div>
+        <div class="step reveal"><span class="num">04</span><h3>El amigo compra</h3><p>La conversión queda atribuida al referente automáticamente.</p></div>
+        <div class="step reveal"><span class="num">05</span><h3>Ambos ganan</h3><p>Recompensa de doble vía que alimenta el siguiente ciclo.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tipos">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Cómo se premia</span>
+        <h2>Tipos de recompensa</h2>
+        <p>El incentivo correcto cambia todo. Estas son las formas más comunes de estructurarlo.</p>
+      </div>
+      <div class="models">
+        <div class="model reveal"><span class="tag">DOBLE CARA</span><h3>Ganan los dos</h3><p>El más efectivo: tanto el referente como el amigo reciben recompensa.</p></div>
+        <div class="model reveal"><span class="tag">UNA CARA</span><h3>Gana uno</h3><p>Solo premia al referente (o solo al nuevo). Más simple, menos potente.</p></div>
+        <div class="model reveal"><span class="tag">POR NIVELES</span><h3>Escalonada</h3><p>La recompensa crece con la cantidad de referidos exitosos.</p></div>
+        <div class="model reveal"><span class="tag">NO MONETARIA</span><h3>Producto o acceso</h3><p>Upgrades, productos, acceso o estatus en vez de dinero o descuento.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="plataformas">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Con qué se hace</span>
+        <h2>Plataformas</h2>
+        <p>El software gestiona enlaces, recompensas, atribución y antifraude. La elección depende de tu modelo. Cada nombre lleva a su sitio oficial.</p>
+      </div>
+      <div class="plat-grid">
+
+        <div class="plat-col reveal">
+          <div class="plat-col-head"><span class="dot a"></span><h3>Ecommerce y retail</h3></div>
+          <p class="role">Enfocadas en tiendas y marcas DTC.</p>
+          <a class="plat-item" href="https://www.referralcandy.com" target="_blank" rel="noopener"><span class="plat-name">ReferralCandy <span class="arrow">↗</span></span><span class="plat-desc">Simple para Shopify y WooCommerce</span></a>
+          <a class="plat-item" href="https://www.friendbuy.com" target="_blank" rel="noopener"><span class="plat-name">Friendbuy <span class="arrow">↗</span></span><span class="plat-desc">Referidos + loyalty, con A/B testing</span></a>
+          <a class="plat-item" href="https://www.talkable.com" target="_blank" rel="noopener"><span class="plat-name">Talkable <span class="arrow">↗</span></span><span class="plat-desc">Optimización y personalización</span></a>
+          <a class="plat-item" href="https://www.yotpo.com" target="_blank" rel="noopener"><span class="plat-name">Yotpo <span class="arrow">↗</span></span><span class="plat-desc">Referidos dentro de una suite de retención</span></a>
+          <a class="plat-item" href="https://www.mention-me.com" target="_blank" rel="noopener"><span class="plat-name">Mention Me <span class="arrow">↗</span></span><span class="plat-desc">Enterprise, con name-sharing</span></a>
+        </div>
+
+        <div class="plat-col reveal">
+          <div class="plat-col-head"><span class="dot b"></span><h3>SaaS y B2B</h3></div>
+          <p class="role">Para integrar referidos dentro del producto.</p>
+          <a class="plat-item" href="https://growsurf.com" target="_blank" rel="noopener"><span class="plat-name">GrowSurf <span class="arrow">↗</span></span><span class="plat-desc">Hecho para SaaS y fintech</span></a>
+          <a class="plat-item" href="https://www.referralrock.com" target="_blank" rel="noopener"><span class="plat-name">Referral Rock <span class="arrow">↗</span></span><span class="plat-desc">Flexible y multi-industria</span></a>
+          <a class="plat-item" href="https://viral-loops.com" target="_blank" rel="noopener"><span class="plat-name">Viral Loops <span class="arrow">↗</span></span><span class="plat-desc">Campañas y waitlists virales</span></a>
+          <a class="plat-item" href="https://partnerstack.com" target="_blank" rel="noopener"><span class="plat-name">PartnerStack <span class="arrow">↗</span></span><span class="plat-desc">Partners y referidos B2B</span></a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="tecnicas">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Qué lo hace crecer</span>
+        <h2>Técnicas</h2>
+        <p>Lo que multiplica la participación, y lo que apaga un programa antes de que despegue.</p>
+      </div>
+      <div class="tech-grid">
+
+        <div class="tech-col reveal">
+          <div class="plat-col-head"><span class="dot a"></span><h3>Para que crezca</h3></div>
+          <ul class="tech-list">
+            <li><b>Recompensa de doble vía</b>Premiar a ambos —referente y amigo— es lo que más mueve la aguja.</li>
+            <li><b>Pide en el momento "wow"</b>Justo tras una compra o una experiencia positiva, no en frío.</li>
+            <li><b>Hazlo fácil de compartir</b>Un clic, enlace listo y mensaje sugerido: cero fricción.</li>
+            <li><b>Recompensa relevante</b>Que el premio importe a tu público; no siempre gana el descuento más grande.</li>
+            <li><b>Hazlo visible</b>Promociónalo en la web, el email, el post-compra y la app.</li>
+            <li><b>Mide la viralidad</b>Cuántos clientes nuevos trae cada referente, y optimiza desde ahí.</li>
+          </ul>
+        </div>
+
+        <div class="tech-col reveal">
+          <div class="plat-col-head"><span class="dot b"></span><h3>Errores que lo frenan</h3></div>
+          <ul class="tech-list">
+            <li><b>Pedir referidos sin valor</b>Si el producto no enamora, ningún incentivo lo salva.</li>
+            <li><b>Fricción al compartir</b>Formularios largos o pasos extra matan la participación.</li>
+            <li><b>Recompensa pobre o confusa</b>Si no se entiende o no motiva, nadie participa.</li>
+            <li><b>Sin control de fraude</b>Autoreferidos y abuso de cupones se comen el presupuesto.</li>
+            <li><b>Lanzar y olvidar</b>Sin promoción ni optimización, el programa se apaga solo.</li>
+            <li><b>No medir la atribución</b>Sin tracking no sabes qué referente trae valor real.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="nota" style="padding-top: 0;">
+    <div class="wrap reveal">
+      <div class="note">
+        <h3>Primero, un producto que valga la pena recomendar</h3>
+        <p>El programa de referidos amplifica algo que ya funciona: no arregla un producto que no enamora. La gente recomienda lo que la deja contenta. Asegura primero la experiencia, y luego dale un buen motivo y una forma fácil de correr la voz.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Dudas frecuentes</span>
+        <h2>Preguntas rápidas</h2>
+      </div>
+      <div class="faq reveal">
+        <details><summary>¿Referidos o afiliados? <span class="sign">+</span></summary><p>Referidos son tus propios clientes recomendando a conocidos, movidos por una buena experiencia y un incentivo. Afiliados son terceros (creadores, medios, sitios) que promueven por comisión. Distinta motivación, distinta escala; se complementan.</p></details>
+        <details><summary>¿Qué recompensa funciona mejor? <span class="sign">+</span></summary><p>Por lo general, la de doble vía (ganan ambos), porque el referente se siente cómodo recomendando algo que también beneficia a su amigo. Lo importante es que el premio sea relevante para tu público.</p></details>
+        <details><summary>¿Cuándo conviene pedir el referido? <span class="sign">+</span></summary><p>En el momento de mayor satisfacción: justo después de una compra o una experiencia positiva. Pedirlo "en frío" rinde mucho menos.</p></details>
+        <details><summary>¿Sirve para B2B? <span class="sign">+</span></summary><p>Sí. En B2B y SaaS la recomendación de un par tiene mucho peso. Cambian las herramientas y el tipo de recompensa, pero el principio es el mismo.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section id="cta">
+    <div class="wrap reveal">
+      <div class="cta-band">
+        <span class="eyebrow">Siguiente paso</span>
+        <h2>¿Listo para que <span class="grad-text">te recomienden</span>?</h2>
+        <p>Define la recompensa, quita la fricción y pídelo en el momento justo. Tus mejores clientes pueden traerte los siguientes.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#plataformas">Ver plataformas →</a>
+          <a class="btn btn-ghost" href="#tecnicas">Repasar técnicas</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap foot-grid">
+    <a class="brand" href="#top"><span class="brand-mark">R</span> Programas de <span class="grad-text">Referidos</span></a>
+    <p>Contenido educativo. Verifica funciones, precios e integraciones directamente en cada plataforma.</p>
+  </div>
+</footer>
+
+<script>
+  var toggle = document.getElementById('navtoggle');
+  var links = document.getElementById('navlinks');
+  toggle.addEventListener('click', function () {
+    var open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  links.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') { links.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); }
+  });
+  var reveals = document.querySelectorAll('.reveal');
+  if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches && 'IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(function (el) { io.observe(el); });
+  } else { reveals.forEach(function (el) { el.classList.add('in'); }); }
+</script>
+
+</body>
+</html>
